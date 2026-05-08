@@ -71,10 +71,7 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
       label: 'Intro to Java',
       items: [
         { label: 'Stage Overview', slug: 'intro-to-java/stage-overview' },
-        { label: 'Variables', slug: 'intro-to-java/variables' },
-        { label: 'Conditionals and Loops', slug: 'intro-to-java/conditionals-and-loops' },
-        { label: 'Methods', slug: 'intro-to-java/methods' },
-        { label: 'Objects', slug: 'intro-to-java/objects' },
+        { label: 'Java fundamentals', slug: 'intro-to-java/java-fundamentals' },
       ],
     },
   ],
