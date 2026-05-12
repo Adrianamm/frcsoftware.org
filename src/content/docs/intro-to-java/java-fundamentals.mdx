@@ -1,16 +1,67 @@
 ---
-title: Java Basics
+title: Java Fundamentals
 description: An Intro to print statements and variables
 prev: intro-to-java/java-fundamentals
 next: false
 ---
 import Aside from '../../../components/Aside.astro';
+import ContentFigure from '../../../components/ContentFigure.astro';
+
+## Syntax
+As you start programming, you might make a mistake or make a typo. When that happens, your code will have a red line under it. This is because Java has rules called syntax. Syntax is a set of rules that have to be followed so that the computer can understand and run your code. It’s important to pay attention to the syntax!
+If your code has a red line under it, first check whether the syntax is correct. This can be done by researching online or by comparing your code with examples. 
+
+You can also learn what’s wrong with your code when you put the cursor over the section of the code with the red line and read what the error message is.
+Error messages will not tell you exactly what's wrong with your code. If you’re unsure on what the error message means, you can look it up to get additional context. 
+
+<ContentFigure src="/java-fundamentals/ErrorExample1.png" />
+<ContentFigure src="/java-fundamentals/ErrorExample2.png" />
+
+
+## Variables 
+Variables are containers that are used to store information in a program. This could be a variable that holds the temperature or a variable that holds the speed of the motor. 
+
+The syntax of a variable is has following:
+```java
+Datatype name = value;
+```
+Data types refer to the type of value that our variable has. It helps tell our program more information about our variables such as what type of information it holds and how it can be used. 
+Data types can include numbers, characters or a string of words. Some examples of data types that are commonly used in FRC programming are:
+* Int: integers or numbers that are positive or negative. Int only allows numbers without decimals. Example: 12
+* Double: Double: numbers that are positive or negative. Unlike int, double allows numbers with or without decimals. Example: 34.1
+* Boolean: either True or False.
+* String: holds a sequence of characters. Example: “Hello World”
+* Char: holds a Single character. Example: 'A'
+
+The name of your variable can be whatever you want. However, it should be easy to read and make sense to others who may be reading your code. 
+There are also some rules with variable names. The name of the variable can not include spaces. Instead you can write variables with camel case (frontLeftDrive) and snake case (front_Left_Drive).
+Variable names can not start with a number. However, they can have a number at the end of the name. 
 
 <Aside type="note">
-Pay attetion to syntax! 
-You will notice that if you make a typo, your code will have a red line under it and you will have an error message if you try to run your code. This is because Java has rules called syntax. Syntax is a set of rules that have to be followed so that the computer can understand and run your code. 
-If your code has a red line under it, you should first check to see if the syntax is correct. This can be done by researching online or by comparing your code with examples.
+Java is a case-sensitive programming language! This means that uppercase and lowercase letters are treated as being two different things. For example: MotorID is different from motorID. Even though it’s spelled the same, if your variable name is MotorID then you try to reference it again but spell it as motorID, Java will see the two as different, and your code will get an error. 
 </Aside>
+
+In Java, semi-colons (;) are similar to a period in a sentence. It is what tells the compiler when a line of code ends. Semi-colons are used commonly in programming and aren’t only for creating variables. We will see more examples of this later in the course. 
+
+In FRC, variables can be used to hold information about the robot and its different mechanisms. The example below shows 3 variables that were used for a climber mechanism, CLIMBERID is an integer that holds the motor controller ID number which is 51. UP_POSITION is a double that holds the value -33.5 and DOWN_POSITION is a double that holds the value 0.
+```java  
+int CLIMBERID = 51;
+double UP_POSITION = -33.5;
+double DOWN_POSITION = 0;
+```
+
+
+## Print statements
+When programming, it can be useful to display information. This can be helpful for making programs that display information to the user or trying to see what speed that a motor is running.
+In Java, we can print information to a terminal using a print statement. A print statement in Java looks like:
+```java  
+System.out.print(“hello!”);
+```
+What the print statement does is take information inside the parentheses, in the above example, it’s “hello!”, and prints it out to the terminal screen. When using a print statement, the text that we want to print out goes inside the parentheses and is in quotes. However, if we are printing out the value of a variable, then we do not need quotes, as shown below.
+```java  
+int number = 4;
+System.out.print(number); // prints out the value 4
+```
 
 ## Comments
 When programming, we use comments to write notes that explain what the code does. This helps make the code more readable for others because if they are unsure of what your code does, they can read your comments. Comments are not run by the compiler, which also means that you can use comments to prevent code from running. 
@@ -36,12 +87,3 @@ For example, this is a comment with two lines of text
 This is another line */
 System.out.print("Hello World");
 ```
-
-## Print statements
-
-## Variables 
-
-When programming, it can be useful to print information to a terminal. This can be helpful for making programs that display information to the user or printing out what the motor speed is. In Java, we can print information using a print statement. 
-
-
-## Variables
