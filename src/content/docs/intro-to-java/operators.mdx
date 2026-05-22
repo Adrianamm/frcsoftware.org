@@ -1,0 +1,285 @@
+---
+title: Operators
+description: An Intro to operators and how they are used to change variables
+prev: intro-to-java/java-fundamentals
+next: false
+---
+
+import Aside from '../../../components/Aside.astro';
+
+In Java, we use operators to perform to change or compare the values of variables. There are different types of operators, which are: 
+* Arithmetic Operators
+* Assignment Operators
+* Comparison Operators
+* Logical Operators
+
+These types of operators are often used in programming. They can be used to update a robot arm's setpoint, where we want the mechanism to be, or to change the value of a variable in a loop. Operators are important to know when programming your robot
+
+## Arithmetic Operators
+Arithmetic operators are used to perform basic math on variables. These include:
+<table class="Arithmetic Operators">
+  <thead>
+    <tr>
+      <th>Operator</th>
+      <th>Description</th>
+      <th>Compatible Data Types</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>+</td>
+      <td>Addition: Adds two values together</td>
+      <td> int, double</td>
+      <td>a + b</td>
+    </tr>
+    <tr>
+      <td>-</td>
+      <td>Subtraction: Subtracts one value from the other</td>
+      <td>int, double</td>
+      <td>a - b</td>
+    </tr>
+    <tr>
+      <td>*</td>
+      <td>Multiplication: Multiplies two values together</td>
+      <td>int, double</td>
+      <td>a * b</td>
+    </tr>
+    <tr>
+      <td>/</td>
+      <td>Division: Divides one value from the other</td>
+      <td>int, double</td>
+      <td>a / b</td>
+    </tr>
+    <tr>
+      <td>%</td>
+      <td>Remainder: Returns the remainder of two numbers after division</td>
+      <td>int, double</td>
+      <td>a / b</td>
+    </tr>
+        <tr>
+      <td>++</td>
+      <td>Increment: add 1 to a varible</td>
+      <td>int, double</td>
+      <td>a++</td>
+    </tr>
+        <tr>
+      <td>--</td>
+      <td>Decrement: subtracts 1 to a varible</td>
+      <td>int, double</td>
+      <td>a--</td>
+    </tr>
+  </tbody>
+</table>
+
+Operators can be used when creating variables or when changing a variable later in code. In the example below, we have three variables whose values are set using different operators. Without running the code, what value would each variable hold?
+```java
+int answer1 = 2 + 4;
+int answer2 = 6 / 3;
+int answer3 = 10 - 3;
+```
+<details class="accordion">
+  <summary>Answer</summary>
+  <div class="content">
+    <p>
+    * answer1 is 6 because 2 + 4 = 6
+    * answer2 is 2 because 6 / 3 = 2
+    * answer3 is 7 because 10 - 3 = 7 
+    </p>
+  </div>
+</details>
+
+Operators can also be used to change a variable later in code. In the example below, we have an integer variable named Number that is set to 6. Using the multiplication operator, the value is adjusted inside the print statement. Without running the code, what is the value of Number?
+```java
+int Number = 6;
+
+System.out.print(answer * 2);
+```
+<details class="accordion">
+  <summary>Answer</summary>
+  <div class="content">
+    <p>Number's new value is 12. This is because Number holds the value 6. When multiplied by 2, 6 becomes 12, which is the new value of Number </p>
+  </div>
+</details>
+
+<Aside type="note">
+When dividing two integers, the result will be an integer instead of a double.
+Example: 
+```java
+System.out.print(7 / 2);
+```
+The example above will print out 3. If you want the result to return a double, the data type should be a double instead of an int. 
+</Aside>
+
+The ++ and -- operators are often used to change the value of the code as well. They help with incrementing and decrementing values and are used in conditionals (which are covered in a later stage).
+For now, we can use the operators to change variables without using conditionals.
+Like mentioned before, ++ increments the value of a variable by adding 1 and -- decrements the value of a variable by subtracting 1.
+
+In the example below, we have two varibles. 
+```java
+int x = 6;
+int y = 7;
+
+System.out.println(++x);
+System.out.println(--y);
+```
+In the first print statement, we have ++x. This means it takes the value of x and increments it by 1 which gives us 7 because 6 + 1 is 7.
+In the second print statement, we have --y. This means that it takes the value of y, decrements it by 1 which gives us 6 since 7 - 1 is 6. 
+
+
+## Assignment Operators
+Assignment operators are used when assigning or updating the values in a variable. These include:
+<table class="Assignment Operators">
+  <thead>
+    <tr>
+      <th>Operator</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{'='}</td>
+      <td>Assigns a value to a variable</td>
+      <td>a = 2</td>
+    </tr>
+    <tr>
+      <td>{'+='}</td>
+      <td>Addition: Takes the current value of the variable, adds the stated amount then assigns the result to the variable. It's the same as x = x + y  </td>
+      <td>a += 3</td>
+    </tr>
+    <tr>
+      <td>{'-='}</td>
+      <td>Subtraction: Takes the current value of the variable, subtracts the stated amount then assigns the result to the variable. It's the same as x = x - y </td>
+      <td>a {'-='} 4</td>
+    </tr>
+    <tr>
+      <td>{'*='}</td>
+      <td>Multiplication: Takes the current value of the variable, multiplies the stated amount then assigns the result to the variable. It's the same as x = x * y</td>
+      <td>a {'*='} 5</td>
+    </tr>
+    <tr>
+      <td>{'/='}</td>
+      <td>Division: Takes the current value of the variable, divides the stated amount then assigns the result to the variable. It's the same as x = x / y</td>
+      <td>a {'/='} 6</td>
+      </tr>
+  </tbody>
+</table>
+
+Assignment Operators are similar to Arithmetic Operators, they are shorthand. Using the shorthand version can help make code easier to read. It prevents having to write the variable name twice which can also be helpful in preventing code issues.  
+
+In the example below, we have variables A which is set to 10, and variable B which is set to 5. Since += adds 1, A will hold the value of 11. Similarly, B will now hold the value of 4
+
+```java
+int A = 10;
+int B = 5;
+A += 1;
+B -= 1;
+
+System.out.println(A); // prints 11
+System.out.println(B); // prints 4
+```
+
+## Comparison Operators
+Comparison operators are symbols that tell the program how to compare values. They can be used to help make decisions, which is an important part of programming. Comparison operators are a main part of conditionals, which are discussed later in this stage.
+
+<table class="Comparison Operators">
+  <thead>
+    <tr>
+      <th>Operator</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{'=='}</td>
+      <td>Equals to: Checks if one value is the same values as the other</td>
+      <td>a == b</td>
+    </tr>
+    <tr>
+      <td>{'!='}</td>
+      <td>Not Equal: Checks if one value is NOT equal to the other</td>
+      <td>a != b</td>
+    </tr>
+    <tr>
+      <td>{'>'}</td>
+      <td>Greater than: Checks if one value is greater than the other</td>
+      <td>a {'>'} b</td>
+    </tr>
+    <tr>
+      <td>{'<'}</td>
+      <td>Less than: Checks if one value is less than the other</td>
+      <td>a {'<'} b</td>
+    </tr>
+    <tr>
+      <td>{'>='}</td>
+      <td>Greater than or equal too: Checks if one value is greater than or equal to the other</td>
+      <td>a {'>='} b</td>
+    </tr>
+      <tr>
+      <td>{'<='}</td>
+      <td>Less than or equal too: Checks if one value is less than or equal to the other</td>
+      <td>a {'<='} b</td>
+    </tr>
+  </tbody>
+</table>
+
+Comparison Operators help programs make decisions because they can return if the value of a comparison is true or false. If you remember from the previous section, these are booleans!
+
+Comparison operators are very similar to what you see in math problems. In this example, we have two variables: A and B. A is set to 2, and B is set to 4. The print statement compares the two variables using the greater than sign. In the example below, it returns false because 2 is not greater than 4.
+```java
+int A = 2;
+int B = 4;
+System.out.print(A > B);
+```
+
+## Logical Operators
+Logical operators are symbols that let a program make decisions by combining true or false statements. They are also used when making decisions in a program and are also used in conditionals.
+
+<table class="Comparison Operators">
+  <thead>
+    <tr>
+      <th>Operator</th>
+      <th>Description</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{'&&'}</td>
+      <td>and: true if both statments are true</td>
+      <td>true && true // this is true</td>
+    </tr>
+    <tr>
+      <td>{'||'}</td>
+      <td>Or: true if at least one statement is true</td>
+      <td>true || false // this is true</td>
+    </tr>
+    <tr>
+      <td>{'!'}</td>
+      <td>Not: reverses. If true, then false. If false then true </td>
+      <td> !true // this changes to false</td>
+    </tr>
+  </tbody>
+</table>
+
+In the example below we have 2 variables: AnswerOne and AnswerTwo. We know AnswerOne is true and AnswerTwo is false. Using that information and without running the code, what should the print statements print out?
+```java
+boolean AnswerOne = 5 > 3; // True
+boolean AnswerTwo = 9 < 2; // False
+
+System.out.println(AnswerOne && AnswerTwo);
+System.out.println(AnswerOne || AnswerTwo);
+System.out.println(!AnswerOne);
+```
+<details class="accordion">
+  <summary>Answer</summary>
+  <div class="content">
+    <p>
+    * false. && returns true if both statements are true. AnswerTwo is false, therefore the operator will return false
+    * true. || returns true if one of the statements are true. AnswerOne is true, therefore the the operator will return true
+    * false. ! reverses the outcome. AnswerOne is true, adding ! will reverse it and return false
+     </p>
+  </div>
+</details>

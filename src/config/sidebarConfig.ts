@@ -72,6 +72,7 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
       items: [
         { label: 'Stage Overview', slug: 'intro-to-java/stage-overview' },
         { label: 'Java fundamentals', slug: 'intro-to-java/java-fundamentals' },
+        { label: 'Operators', slug: 'intro-to-java/operators' },
       ],
     },
   ],
