@@ -34,16 +34,16 @@ Data types can include numbers, characters or a string of words. Some example da
 * char: holds a Single character. Example: 'A'
 
 The name of your variable can be whatever you want. However, it should be easy to read and make sense to others who may be reading your code. 
-There are also some rules with variable names. The name of the variable can not include spaces. Instead you can write variables with camel case (frontLeftDrive). Snake camel case (front_Left_Drive) is used for constants which we will learn about later on in the course.
-Variable names can have numbers any point in the name but it can not start with a number.
+There are also some rules with variable names. The name of the variable can not include spaces. Instead you can write variables with camel case (frontLeftDrive). Upper camel case (FRONT_LEFT_DRIVE) is used for constants which we will learn about later on in the course.
+Variable names can have numbers any point except the first character.
 
 <Aside type="note">
 Java is a case-sensitive programming language! This means that uppercase and lowercase letters are treated as being two different things. For example: MotorID is different from motorID. Even though it’s spelled the same, if your variable name is MotorID then you try to reference it again but spell it as motorID, Java will see the two as different, and your code will get an error. 
 </Aside>
 
-In Java, semi-colons ``;`` are similar to a period in a sentence. It is what tells the compiler when a statement ends. Semi-colons are used commonly in programming and aren’t only for creating variables. We will see more examples of this later in the course. 
+In Java, semi-colons `;` are similar to a period in a sentence. It is what tells the compiler when a statement ends. Semi-colons are used commonly in programming and aren’t only for creating variables. We will see more examples of this later in the course. 
 
-In FRC, variables can be used to hold information about the robot and its different mechanisms. The example below shows 3 variables that were used for a climber mechanism, CLIMBERID is an integer that holds the motor controller ID number which is 51. UP_POSITION is a double that holds the value -33.5 and DOWN_POSITION is a double that holds the value 0.
+In FRC, variables can be used to hold information about the robot and its different mechanisms. The example below shows 3 variables that were used for a climber mechanism, CLIMBER_ID is an integer that holds the motor controller ID number which is 51. UP_POSITION is a double that holds the value -33.5 and DOWN_POSITION is a double that holds the value 0.
 ```java  
 int CLIMBER_ID = 51;
 double UP_POSITION = -33.5;
@@ -73,7 +73,7 @@ When programming, we use comments to write notes that explain what the code does
 In Java, there are two types of comments: single-line comments and multi-line comments.
 
 ### Single-line Comments
-Single line comments begin with ``//`` and mark the rest of the line as being a comment. For example, the code below leave the note of "This prints out Hello World." above the print statment
+Single line comments begin with `//` and mark the rest of the line as being a comment. For example, the code below leave the note of "This prints out Hello World." above the print statment
 ```java
 // This prints Hello World
 System.out.print("Hello World");
@@ -85,7 +85,7 @@ System.out.print("Hello World"); // This prints Hello World
 Both examples accomplish the same tasks and there is no difference. Whether you put your comments above or next to code is up to you and what makes the most sense for your code. 
 
 ### Multi-line Comments
-Multi-line Comments start with ``/*`` and end with ``*/`` The text or code that is in between the two will turn into comments. Multi-line Comments are commonly used when you have many lines of text or need to turn a large amount of code into a comment. 
+Multi-line Comments start with `/*` and end with `*/` The text or code that is in between the two will turn into comments. Multi-line Comments are commonly used when you have many lines of text or need to turn a large amount of code into a comment. 
 For example, this is a comment with two lines of text
 ```java
 /* This prints Hello World
