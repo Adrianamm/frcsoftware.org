@@ -27,7 +27,7 @@ Datatype name = value;
 ```
 Data types refer to the type of value that our variable has. It helps tell our program more information about our variables such as what type of information it holds and how it can be used. 
 Data types can include numbers, characters or a string of words. Some examples of data types that are commonly used in FRC programming are:
-* Int: integers or numbers that are positive or negative. Int only allows numbers without decimals. Example: 12
+* Int: integers, or whole numbers, that are positive or negative. Example: 12
 * Double: Double: numbers that are positive or negative. Unlike int, double allows numbers with or without decimals. Example: 34.1
 * Boolean: either True or False.
 * String: holds a sequence of characters. Example: “Hello World”
@@ -44,21 +44,19 @@ Java is a case-sensitive programming language! This means that uppercase and low
 
 In Java, semi-colons (;) are similar to a period in a sentence. It is what tells the compiler when a line of code ends. Semi-colons are used commonly in programming and aren’t only for creating variables. We will see more examples of this later in the course. 
 
-In FRC, variables can be used to hold information about the robot and its different mechanisms. The example below shows 3 variables that were used for a climber mechanism, CLIMBERID is an integer that holds the motor controller ID number which is 51. UP_POSITION is a double that holds the value -33.5 and DOWN_POSITION is a double that holds the value 0.
-```java  
-int CLIMBERID = 51;
+In FRC, variables can be used to hold information about the robot and its different mechanisms. The example below shows 3 variables that were used for a climber mechanism, CLIMBER_ID is an integer that holds the motor controller ID number which is 51. UP_POSITION is a double that holds the value -33.5 and DOWN_POSITION is a double that holds the value 0.
 double UP_POSITION = -33.5;
 double DOWN_POSITION = 0;
 ```
 
 
 ## Print statements
-When programming, it can be useful to display information. This can be helpful for making programs that display information to the user or trying to see what speed that a motor is running.
+When programming, it can be useful to display information to the user.
 In Java, we can print information to a terminal using a print statement. A print statement in Java looks like:
 ```java  
-System.out.print(“hello!”);
+System.out.println(“hello!”);
 ```
-What the print statement does is take information inside the parentheses, in the above example, it’s “hello!”, and prints it out to the terminal screen. When using a print statement, the text that we want to print out goes inside the parentheses and is in quotes. However, if we are printing out the value of a variable, then we do not need quotes, as shown below.
+Print statements print data to the console, a text-only message log. The console can be viewed on the driver station, or in VSCode
 ```java  
 int number = 4;
 System.out.print(number); // prints out the value 4
@@ -69,7 +67,7 @@ When programming, we use comments to write notes that explain what the code does
 In Java, there are two types of comments. Single-line Comments and Multi-line Comments.
 
 ### Single-line Comments
-Single-line comments are // and you add them to the front of your text or line of code. For example, the code below leaves a note of “this prints out Hello World. 
+Single-line comments start with // . For example, the code below leaves a note of “this prints out Hello World. 
 ```java
 // This prints Hello World
 System.out.print("Hello World");
