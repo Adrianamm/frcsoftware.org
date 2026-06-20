@@ -1,0 +1,125 @@
+---
+title: Conditionals
+description: An Intro to conditional statements 
+prev: intro-to-java/operators
+next: false
+---
+
+import ContentFigure from '../../../components/ContentFigure.astro';
+
+In everyday life, we make decisions based on different situations. Such as if we are hungry, then we get a snack or if we are tired, we go to bed.
+Often in code, we want our program to do something similar and make different decisions based on different situations. For robots, this could be if the timer starts then drive the robot for 5 seconds then stop when the timer reached 15 seconds. To add decisions to our code, we can use conditionals.
+
+In Java, we have four different types of conditionals:
+* if
+* else if 
+* else  
+
+Like we mentioned earlier in <a href="/intro-to-java/java-fundamentals/"> Java Fundamentals </a>, all code has syntax that has to be followed. Part of syntax are keywords. As a reminder, a keyword is a reserved word that the compiler uses to run the code. 
+In Java, we use the following keywords for conditionals: ``if``, ``else``, and ``else if``
+
+## If
+An ``if`` statement is the most simple conditional. The syntax for an ``if`` statement is as follows:
+```java
+if (condition) {
+    // code to run when condition is true
+}
+```
+Lets break down what this means: 
+* ``if`` is a keyword
+* ``( )`` holds the condition that is either true or false. Example: (6 > 2) is a condition and it is true because 6 is greater than 2
+* ``{`` an open bracket is used to denote the opening of the conditional
+* ``}`` a closed bracket is used to denote  the end of the conditional
+
+All conditionals follow a very similar syntax. They all start with a keyword, most are followed by parentheses, and they all have an opening and closing bracket. 
+
+``if`` statements can make decisions because of the condition inside the parentheses. If condition is True, the code inside the statement will run. If condition is False, the code inside the statement will be skipped. 
+This is also described in the flowchart below
+<ContentFigure src="/conditionals/ifstatement.png" width="400px" height="800px" />
+
+Now lets look at an example. In this example, pretend that we have a robot with a distance sensor on it. A distance sensors detects and reports how far or how close the robot is to an object.
+We want our robot's motors to keep spinning until it reaches a distance of being 20cm away. Our robot is currently 6cm away. 
+Looking at the example, what should happen?
+
+```java
+double distance = 6;
+if (distance < 10){
+    System.out.println("Motors are spinning");
+    drivetrain.setThrottle(1); // runs the motor at full speed
+}
+```
+The condition is ``distance < 10``. We know distance is equal to 6, therefore we can think of the condition saying 6 < 10. 6 is less than 10 which makes the condition true. This means the code inside the `if` statement runs, it prints Motor is spinning and the motors spin at half speed.
+Often we want the robot to slow down as it approaches it's target. Lets say we want the robot to drive at half speed when it's 5cm away from it's target. We could add another if statement but we could also use another conditional called an ``else if`` statement.
+
+
+## else if
+Sometimes we want our code to have more complexity in how it makes decisions like slowing down the robot as mentioned above. This can be done by adding an ``else if`` statement.
+
+
+The syntax for an ``else if`` statement goes as follows:
+```java
+if (Condition_A) {
+    // code to run when Condition_A is true
+} else if (Condition_B){
+    // code to run when Condition_B is true
+}
+```
+It's similar to an ``if`` statement but now it has ``else if`` at the end. Lets break down what this new addition means.
+``else if`` is a keyword that allows the conditional to run a different task if the ``if`` statement is false. 
+
+If Condition_A is True then the code inside the if statement will run. If Condition_A if False, then it will go to the else if statement. If Condition_B is True, the code inside the else if statement will run. If Condition_B if False, then it will exit the statement and none of the code will run.
+This is also described in the flowchart below
+<ContentFigure src="/conditionals/elseif.png" width="700px" height="800px" />
+
+In the example, we know have a ``else if`` statement that sets the motor to half speed if the distance is less than 10cm away. Our distance is now 15. With the new addition, what would the code print out?
+```java
+double distance = 15;
+if (distance < 10) {
+    System.out.println("Motors are half speed");
+    drivetrain.setThrottle(0.5); // runs the motors at half speed
+} else if (distance > 10) {
+    System.out.println("Motors are at full speed");
+    drivetrain.setThrottle(1); // runs the motors at full speed
+}
+```
+The distance is 15cm away. The first condition is ``distance < 10``. 15 is not less than 10, which means that condition is false. Therefore we go to the next part of the conditional which is the ``else if``. The ``else if`` has the condition ``distance > 10``.
+15 is greater than 10 so the code inside the conditional runs. This means the motors are set to drive at full speed and "Motors are at full speed" gets printed to the terminal.
+
+Our example code has the robot drive at full speed if the distance is greater than 10cm, has the robot drive at half speed if the distance is less than 10cm, but the robot never stops if it reaches it's target distance. You could add another ``else if``, or you could add an ``else`` conditional.
+
+## else
+When making decisions, sometimes there isn't a need for precise logic. You might only care about one specific condition. For example: The robot keeps driving until distance is at 10, then stop. 
+
+The syntax for an ``else`` statement is as follows:
+```java
+if (condition) {
+  // block of code to be executed if the condition is true
+} else {
+  // block of code to be executed if the condition is false
+}
+```
+``else`` statements do not have parentheses because they do not have a condition. If Condition is True, then the code inside the ``if`` statement will run. Otherwise, the code inside the else statement will run.
+This means if Condition is something other than True, so False, the else statement will run.
+
+This is also described in the flowchart below
+<ContentFigure src="/conditionals/else.png" width="700px" height="800px" />
+
+In this example, we now have an ``else`` statement that sets the motor speed to 0 if the distance is greater than 20. Since our distance is set to 21, what would the code print out?
+```java
+double distance = 21;
+if (distance < 10) { 
+    System.out.println("Motors are at half speed");
+    drivetrain.setThrottle(0.5); // runs the motors at half speed
+} else if (distance <= 20) {
+    System.out.println("Motors are at full speed");
+    drivetrain.setThrottle(1); // runs the motors at full speed
+} else {
+    System.out.println("Motors are not spinning");
+    drivetrain.setThrottle(0); // stops the motors
+}
+```
+We check the first conditional ``distance < 10``. 21 is not less than 10 so we skip that conditional and go to the ``else if``. This conditional has ``distance <= 20``, we know 21 is not less than or equal to 20 so we skip this conditional.
+Since the two conditionals were false, this means the ``else`` runs and it prints out Motors are not spinning, and the motors are set to 0. 
+
+
+
