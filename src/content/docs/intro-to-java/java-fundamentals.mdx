@@ -17,7 +17,6 @@ Error messages will not tell you exactly what's wrong with your code. If you’r
 <ContentFigure src="/java-fundamentals/ErrorExample1.png" />
 <ContentFigure src="/java-fundamentals/ErrorExample2.png" />
 
-
 ## Variables 
 Variables are containers that are used to store information in a program. This could be a variable that holds the temperature or a variable that holds the speed of the motor. 
 
@@ -35,6 +34,10 @@ Data types can include numbers, characters or a string of words. Some examples o
 
 The name of your variable can be whatever you want but there are rules with variable names. The name of a variable can not include spaces. Instead, you can write variables with camel case (frontLeftDrive) and snake case (front_Left_Drive).
 Variable names can not start with a number. However, they can have a number anywhere expect the state. 
+
+All programming languages have keywords. A keyword is a reserved word that the compiler uses to run the code. Some examples of keywords are `int`, `string`, `print`, and `if`. Due to the fact that the compiler needs keywords, this means that they can't be used as a variable name.
+`boolean if = false;` will throw an error since `if` is a keyword. However, `boolean if_green = false;` will because `if_green` is not a keyword.
+
 In general, your variable name should be easy to read and make sense to others who may be reading your code. 
 
 
@@ -45,6 +48,7 @@ Java is a case-sensitive programming language! This means that uppercase and low
 In Java, semi-colons (;) are similar to a period in a sentence. It is what tells the compiler when a line of code ends. Semi-colons are used commonly in programming and aren’t only for creating variables. We will see more examples of this later in the course. 
 
 In FRC, variables can be used to hold information about the robot and its different mechanisms. The example below shows 3 variables that were used for a climber mechanism, CLIMBER_ID is an integer that holds the motor controller ID number which is 51. UP_POSITION is a double that holds the value -33.5 and DOWN_POSITION is a double that holds the value 0.
+```java
 double UP_POSITION = -33.5;
 double DOWN_POSITION = 0;
 ```
@@ -59,8 +63,12 @@ System.out.println(“hello!”);
 Print statements print data to the console, a text-only message log. The console can be viewed on the driver station, or in VSCode
 ```java  
 int number = 4;
-System.out.print(number); // prints out the value 4
+System.out.println(number); // prints out the value 4
 ```
+<Aside type="note">
+In Java, `print` prints on the same line. `println` will print on a new line. `println` is commonly used since it makes printing to a screen easier to read.
+</Aside>
+
 
 ## Comments
 When programming, we use comments to write notes that explain what the code does. This helps make the code more readable for others because if they are unsure of what your code does, they can read your comments. Comments are not run by the compiler, which also means that you can use comments to prevent code from running. 
