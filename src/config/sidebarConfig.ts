@@ -94,7 +94,11 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
             label: 'Getting Started',
             items: [
                 {
-                    label: 'Intro to Programmming',
+                    label: 'Website Feature Guide',
+                    slug: 'getting-started/website-feature-guide',
+                },
+                {
+                    label: 'Intro to Programming',
                     slug: 'getting-started/intro-to-prog',
                 },
                 {
