@@ -26,6 +26,51 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
         },
     ],
 
+    // Learning Course section
+    '/learning-course': [
+    {
+      label: 'Learning Course',
+      items: [
+        { label: 'Overview', slug: 'learning-course' },
+        { label: 'Feature Guide', slug: 'learning-course/getting-started/website-feature-guide' },
+        {
+          label: 'Course Setup',
+          collapsed: true,
+          items: [
+            { label: 'Required Tools', slug: 'learning-course/getting-started/required-tools' },
+            { label: 'VSCode Overview', slug: 'learning-course/getting-started/vscode-overview' },
+            { label: 'Forking and Cloning', slug: 'learning-course/getting-started/forking-and-cloning' }, // no work
+          ],
+        },
+        {
+          label: 'Stage 0',
+          collapsed: true,
+          items: [
+            { label: 'Stage Introduction', slug: 'learning-course/intro-to-java/stage-overview' },
+            {
+              label: 'Intro To Java',
+              collapsed: true,
+              items: [
+                    { label: 'Java Fundamentals', slug: 'learning-course/intro-to-java/java-fundamentals' },
+                    { label: 'Operators', slug: 'learning-course/intro-to-java/operators' },
+                    { label: 'Conditionals', slug: 'learning-course/intro-to-java/conditionals' },
+                    { label: 'Loops', slug: 'learning-course/intro-to-java/loops' },
+                    { label: 'Objects', slug: 'learning-course/intro-to-java/objects' },
+                    { label: 'Methods', slug: 'learning-course/intro-to-java/methods' },
+              ],
+            },
+          ],
+        },
+        {
+          label: 'Stage 1',
+          collapsed: true,
+          items: [
+            { label: 'Stage Introduction', slug: 'learning-course/stage1/introduction' },
+          ],
+        },
+      ],
+    },
+  ],
     // Educator's Guide section
     '/educators-guide': [
         {
