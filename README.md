@@ -362,12 +362,14 @@ pnpm --version   # Should be 10.x or higher
 
 ## Commands
 
-| Command        | Action                                     |
-| :------------- | :----------------------------------------- |
-| `pnpm install` | Install dependencies                       |
-| `pnpm dev`     | Start local dev server at `localhost:4321` |
-| `pnpm build`   | Build production site to `./dist/`         |
-| `pnpm preview` | Preview build locally before deploying     |
+| Command        | Action                                                            |
+| :------------- | :---------------------------------------------------------------- |
+| `pnpm install` | Install dependencies                                              |
+| `pnpm dev`     | Start local dev server at `localhost:4321`                        |
+| `pnpm build`   | Build production site to `./dist/`                                |
+| `pnpm preview` | Preview build locally before deploying                            |
+| `pnpm format`  | Run the formatter                                                 |
+| `pnpm lint`    | Run all lint steps (ESLint, remark, region validation, typecheck) |
 
 ## Deployment
 
@@ -380,9 +382,9 @@ To deploy:
 
 ## Contributing
 
-See the [Contribution Guide](/contribution/methodsofcontributing/) on the website for details on how to contribute to FRCSoftware.org.
+See the [Contribution Guide](https://frcsoftware.org/contribution/) on the website for details on how to contribute to FRCSoftware.org.
 
 ## Links
 
 - [FRCSoftware.org](https://frcsoftware.org/)
-- [GitHub Repository](https://github.com/frcsoftware/frcsoftware.github.io)
+- [GitHub Repository](https://github.com/frcsoftware/frcsoftware.org)

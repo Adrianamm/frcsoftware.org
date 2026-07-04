@@ -1,5 +1,10 @@
 name: Cleanup Preview Deployments
 
+# SECURITY: pull_request_target runs in the base repo context with full
+# secret access, even for fork PRs. This workflow is safe because it never
+# checks out or executes PR code — it only reads the PR event number and
+# calls the Cloudflare API. Do NOT add a checkout step or run untrusted
+# scripts here, as that would create a Pwn Request vulnerability.
 on:
     pull_request_target:
         types: [closed]
@@ -10,31 +15,68 @@ jobs:
         runs-on: ubuntu-latest
         permissions:
             contents: read
+        env:
+            CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+            CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         steps:
             - name: Delete Cloudflare Pages preview deployment
-              env:
-                  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-                  CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-              run: |
-                  BRANCH="pr-${{ github.event.number }}"
-                  PROJECT="frcsoftware"
-                  echo "Cleaning up preview deployments for branch: $BRANCH"
+              uses: actions/github-script@v9
+              with:
+                  script: |
+                      const token = process.env.CLOUDFLARE_API_TOKEN;
+                      const accountId = process.env.CLOUDFLARE_ACCOUNT_ID;
+                      const prNumber = context.payload.number;
+                      const branch = `pr-${prNumber}`;
+                      const projectName = 'frcsoftware';
+                      const baseUrl = `https://api.cloudflare.com/client/v4/accounts/${accountId}/pages/projects/${projectName}/deployments`;
 
-                  DEPLOYMENTS=$(curl -s -X GET \
-                    "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/${PROJECT}/deployments" \
-                    -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
-                    -H "Content-Type: application/json" | \
-                    jq -r --arg branch "$BRANCH" '.result[] | select(.deployment_trigger.metadata.branch == $branch) | .id')
+                      const headers = {
+                          Authorization: `Bearer ${token}`,
+                          'Content-Type': 'application/json',
+                      };
 
-                  if [ -z "$DEPLOYMENTS" ]; then
-                    echo "No deployments found for branch $BRANCH"
-                    exit 0
-                  fi
+                      core.info(`Cleaning up preview deployments for branch: ${branch}`);
 
-                  for ID in $DEPLOYMENTS; do
-                    echo "Deleting deployment: $ID"
-                    curl -s -X DELETE \
-                      "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/${PROJECT}/deployments/${ID}?force=true" \
-                      -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
-                      -H "Content-Type: application/json" | jq .
-                  done
+                      let ids = [];
+                      let page = 1;
+                      let totalPages = 1;
+
+                      while (page <= totalPages) {
+                          const res = await fetch(`${baseUrl}?per_page=25&page=${page}`, { headers });
+                          const body = await res.json();
+                          if (!body.success) {
+                              core.setFailed(
+                                  `Cloudflare API request failed on page ${page}: ${JSON.stringify(body.errors)}`,
+                              );
+                              return;
+                          }
+                          for (const dep of body.result || []) {
+                              if (dep.deployment_trigger?.metadata?.branch === branch) {
+                                  ids.push(dep.id);
+                              }
+                          }
+                          totalPages = body.result_info?.total_pages || 1;
+                          page++;
+                      }
+
+                      if (ids.length === 0) {
+                          core.info(`No deployments found for branch ${branch}`);
+                          return;
+                      }
+
+                      core.info(`Found deployments: ${ids.join(', ')}`);
+
+                      for (const id of ids) {
+                          const delRes = await fetch(`${baseUrl}/${id}?force=true`, {
+                              method: 'DELETE',
+                              headers,
+                          });
+                          const delBody = await delRes.json();
+                          if (!delBody.success) {
+                              core.warning(
+                                  `Failed to delete deployment ${id}: ${JSON.stringify(delBody.errors)}`,
+                              );
+                          } else {
+                              core.info(`Deleted deployment ${id}`);
+                          }
+                      }
