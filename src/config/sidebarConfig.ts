@@ -45,7 +45,7 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                             slug: 'learning-course/getting-started/required-tools',
                         },
                         {
-                            label: 'VSCode Overview',
+                            label: 'VS Code Overview',
                             slug: 'learning-course/getting-started/vscode-overview',
                         },
                         {
