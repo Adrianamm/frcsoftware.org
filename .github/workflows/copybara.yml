@@ -15,13 +15,13 @@ jobs:
 
         strategy:
             # Run the workflows in parallel
+            fail-fast: false
             matrix:
                 workflow:
                     - rev_solution
                     - ctre_solution
-                    # Uncomment the below workflows once the template directories are added to main
-                    # - rev_template
-                    # - ctre_template
+                    - rev_template
+                    - ctre_template
 
         steps:
             - name: Checkout
