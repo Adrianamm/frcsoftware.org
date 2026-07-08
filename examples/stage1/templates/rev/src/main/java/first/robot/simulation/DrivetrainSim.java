@@ -1,7 +1,8 @@
-// Copyright (c) FIRST and other WPILib contributors.
-// Open Source Software; you can modify and/or share it under the terms of
-// the WPILib BSD license file in the root directory of this project.
-
+/*
+ * Copyright 2026 FRCSoftware
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
 package first.robot.simulation;
 
 import com.revrobotics.spark.SparkMax;
@@ -21,14 +22,15 @@ public class DrivetrainSim {
   private final double kWheelRadiusMeters = 0.0762; // 3 inches
   private static final double kBusVoltage = 12.0;
 
-  private final DifferentialDrivetrainSim m_driveSim = new DifferentialDrivetrainSim(
-      DCMotor.getNEO(2), // 2 NEO motors on each side of the drivetrain.
-      kGearRatio,
-      2.1, // MOI of 2.1 kg m^2 (from CAD model).
-      26.5, // Mass of the robot is 26.5 kg.
-      kWheelRadiusMeters, // Robot uses 3" radius (6" diameter) wheels.
-      0.546, // Distance between wheels in meters.
-      null);
+  private final DifferentialDrivetrainSim m_driveSim =
+      new DifferentialDrivetrainSim(
+          DCMotor.getNEO(2), // 2 NEO motors on each side of the drivetrain.
+          kGearRatio,
+          2.1, // MOI of 2.1 kg m^2 (from CAD model).
+          26.5, // Mass of the robot is 26.5 kg.
+          kWheelRadiusMeters, // Robot uses 3" radius (6" diameter) wheels.
+          0.546, // Distance between wheels in meters.
+          null);
 
   private final StructPublisher<Pose2d> simPosePublisher;
 

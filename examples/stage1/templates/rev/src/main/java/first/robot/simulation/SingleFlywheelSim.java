@@ -1,7 +1,8 @@
-// Copyright (c) FIRST and other WPILib contributors.
-// Open Source Software; you can modify and/or share it under the terms of
-// the WPILib BSD license file in the root directory of this project.
-
+/*
+ * Copyright 2026 FRCSoftware
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
 package first.robot.simulation;
 
 import com.revrobotics.spark.SparkMax;
@@ -31,7 +32,8 @@ public class SingleFlywheelSim {
     this.name = name;
     this.motor = motor;
     var gearbox = DCMotor.getNEO(1);
-    this.m_flywheelSim = new FlywheelSim(Models.flywheelFromPhysicalConstants(gearbox, 0.001, 1.0), gearbox);
+    this.m_flywheelSim =
+        new FlywheelSim(Models.flywheelFromPhysicalConstants(gearbox, 0.001, 1.0), gearbox);
 
     var table = NetworkTableInstance.getDefault().getTable(this.name);
     this.motorVoltagePub = table.getDoubleTopic("MotorVoltage").publish();

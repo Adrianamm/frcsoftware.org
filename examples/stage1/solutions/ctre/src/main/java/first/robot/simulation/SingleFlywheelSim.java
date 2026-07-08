@@ -1,3 +1,8 @@
+/*
+ * Copyright 2026 FRCSoftware
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
 package first.robot.simulation;
 
 import static org.wpilib.units.Units.Radians;
@@ -20,8 +25,10 @@ public class SingleFlywheelSim {
   private double motorPosition = 0.0;
 
   private final double gearRatio = 1.0;
-  private final FlywheelSim flywheelSim = new FlywheelSim(
-      Models.flywheelFromPhysicalConstants(DCMotor.getKrakenX60(1), 0.001, gearRatio), DCMotor.getKrakenX60(1));
+  private final FlywheelSim flywheelSim =
+      new FlywheelSim(
+          Models.flywheelFromPhysicalConstants(DCMotor.getKrakenX60(1), 0.001, gearRatio),
+          DCMotor.getKrakenX60(1));
 
   private final double kBusVoltage = 12.0;
 
@@ -32,7 +39,8 @@ public class SingleFlywheelSim {
 
   public SingleFlywheelSim(TalonFX talonMotor, String name) {
     this.talonMotor = talonMotor;
-    this.talonMotorSim = new TalonFXSimState(talonMotor, ChassisReference.CounterClockwise_Positive);
+    this.talonMotorSim =
+        new TalonFXSimState(talonMotor, ChassisReference.CounterClockwise_Positive);
     this.talonMotorSim.setMotorType(MotorType.KrakenX60);
 
     var table = NetworkTableInstance.getDefault().getTable(name);
