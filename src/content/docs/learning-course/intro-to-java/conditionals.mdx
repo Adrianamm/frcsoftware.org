@@ -5,8 +5,6 @@ prev: intro-to-java/operators
 next: false
 ---
 
-import ContentFigure from '../../../components/ContentFigure.astro';
-
 In everyday life, we make decisions based on different situations.
 Such as "If we are hungry, then we get a snack" or "If we are tired, we go to bed".
 Often in code, we want our program to do something similar and make different decisions based on different situations.
@@ -26,9 +24,8 @@ We will be going over three types of conditionals which are:
     want to learn more about switch, you can learn more on w3school's page on{' '}
     <a href="https://www.w3schools.com/java/java_switch.asp">
         {' '}
-        which covers this type of conditional{' '}
+        which covers this type of conditional.{' '}
     </a>
-    .
 </Aside>
 
 Like we mentioned earlier in <a href="/intro-to-java/java-fundamentals/"> Java Fundamentals </a>, all programming languages have syntax that needs to be followed.
@@ -41,10 +38,8 @@ In Java, we use the following keywords for conditionals: if, else, and else if
 An if statement is the most simple conditional.
 The syntax for an if statement is as follows:
 
-```java
-if (condition) {
-    // code to run when condition is true
-}
+```java stage0/snippets/conditionals.java#ifSyntax
+
 ```
 
 Let's break down what this means:
@@ -82,12 +77,8 @@ We want our robot's motors to keep spinning until the robot is 10cm away from an
 Our robot is currently 6cm away.
 Looking at the example, what should happen?
 
-```java
-double distance = 6;
-if (distance < 10) {
-    System.out.println("Motors are spinning");
-    drivetrain.setThrottle(1); // runs the motor at full speed
-}
+```java stage0/snippets/conditionals.java#ifExample
+
 ```
 
 The condition is `distance < 10`.
@@ -104,12 +95,8 @@ This can be done by adding an else if statement.
 
 The syntax for an else if statement goes as follows:
 
-```java
-if (Condition_A) {
-    // code to run when Condition_A is true
-} else if (Condition_B) {
-    // code to run when Condition_B is true
-}
+```java stage0/snippets/conditionals.java#elseIfSyntax
+
 ```
 
 It's similar to an if statement but now it has else if at the end.
@@ -128,15 +115,8 @@ In the example, we now have an else if statement that sets the motor to half spe
 Our distance is now 15cm.
 With the new addition, what would the code print out?
 
-```java
-double distance = 15;
-if (distance < 10) {
-    System.out.println("Motors are half speed");
-    drivetrain.setThrottle(0.5); // runs the motors at half speed
-} else if (distance > 10) {
-    System.out.println("Motors are at full speed");
-    drivetrain.setThrottle(1); // runs the motors at full speed
-}
+```java stage0/snippets/conditionals.java#elseIfExample
+
 ```
 
 The distance is 15cm away.
@@ -159,12 +139,8 @@ This is when we use an 'else' statement
 
 The syntax for an else statement is as follows:
 
-```java
-if (condition) {
-  // block of code to be executed if the condition is true
-} else {
-  // block of code to be executed if the condition is false
-}
+```java stage0/snippets/conditionals.java#ifElseSyntax
+
 ```
 
 else statements do not have parentheses because they do not have a condition.
@@ -178,18 +154,8 @@ This is also described in the flowchart below
 
 In this example, we now have an else statement that sets the motor speed to 0 if the distance is greater than 20. Since our distance is set to 21, what would the code print out?
 
-```java
-double distance = 21;
-if (distance < 10) {
-    System.out.println("Motors are at half speed");
-    drivetrain.setThrottle(0.5); // runs the motors at half speed
-} else if (distance <= 20) {
-    System.out.println("Motors are at full speed");
-    drivetrain.setThrottle(1); // runs the motors at full speed
-} else {
-    System.out.println("Motors are not spinning");
-    drivetrain.setThrottle(0); // stops the motors
-}
+```java stage0/snippets/conditionals.java#conditionalExample
+
 ```
 
 We check the first conditional `distance < 10`.
