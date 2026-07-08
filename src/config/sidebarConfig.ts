@@ -70,10 +70,10 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                                     label: 'Java Fundamentals',
                                     slug: 'learning-course/intro-to-java/java-fundamentals',
                                 },
-                                // {
-                                //     label: 'Operators',
-                                //     slug: 'learning-course/intro-to-java/operators',
-                                // },
+                                {
+                                    label: 'Operators',
+                                    slug: 'learning-course/intro-to-java/operators',
+                                },
                                 // {
                                 //     label: 'Conditionals',
                                 //     slug: 'learning-course/intro-to-java/conditionals',
@@ -280,6 +280,10 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                 {
                     label: 'Java fundamentals',
                     slug: 'intro-to-java/java-fundamentals',
+                },
+                {
+                    label: 'operators',
+                    slug: 'intro-to-java/operators',
                 },
             ],
         },
