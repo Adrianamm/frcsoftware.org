@@ -12,7 +12,7 @@ int answer3 = 10 - 3;
 void main() {
     // [multiplication]
     int Number = 6;
-    System.out.print(answer * 2);
+    System.out.print(Number * 2);
     // [/multiplication]
 
     // [increments]
@@ -34,8 +34,8 @@ void main() {
     // [/arithmetic]
 
     // [comparison]
-    int A = 2;
-    int B = 4;
+    int C = 2;
+    int D = 4;
     System.out.print(A > B);
     // [/comparison]
 
