@@ -2,7 +2,14 @@ boolean condition_A;
 boolean condition_B;
 boolean condition;
 
-Object drivetrain = new Object();
+class Drivetrain {
+    public double setThrottle(double speed) {
+       return speed;
+    }
+}
+
+    // Instantiate the custom drivetrain object instead of a generic Object
+    static Drivetrain drivetrain = new Drivetrain();
 
 void main() {
    
