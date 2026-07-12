@@ -11,8 +11,8 @@ int answer3 = 10 - 3;
 
 void main() {
     // [multiplication]
-    int Number = 6;
-    System.out.print(Number * 2);
+    int magicNumber = 6;
+    System.out.print(magicNumber * 2);
     // [/multiplication]
 
     // [increments]
