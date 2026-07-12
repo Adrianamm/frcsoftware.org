@@ -5,7 +5,7 @@ prev: intro-to-java/java-fundamentals
 next: false
 ---
 
-In Java, we use operators to change or compare the values of variables.
+In Java, we use operators to perform to change or compare the values of variables.
 There are four different types of operators, which are:
 
 - Arithmetic Operators
@@ -13,8 +13,9 @@ There are four different types of operators, which are:
 - Comparison Operators
 - Logical Operators
 
-These types of operators are often used when programming a robot.
-They can be used to update a robot arm's setpoint, which is where we want the mechanism to be, or to change the value of a variable in a loop.
+These types of operators are often used in programming.
+They can be used to update a robot arm's setpoint, where we want the mechanism to be, or to change the value of a variable in a loop.
+Operators are important to know when programming your robot
 
 ## Arithmetic Operators
 
@@ -63,16 +64,29 @@ These include:
             <td>int, double</td>
             <td>`a / b`</td>
         </tr>
+        <tr>
+            <td>`++`</td>
+            <td>Increment: add 1 to a variable</td>
+            <td>int, double</td>
+            <td>`a++`</td>
+        </tr>
+        <tr>
+            <td>`--`</td>
+            <td>Decrement: subtracts 1 to a variable</td>
+            <td>int, double</td>
+            <td>`a--`</td>
+        </tr>
     </tbody>
 </table>
 
 <Aside type="note">
-    Operators in Java follow the order of operations (known as PEMDAS).
+    Similar to with arithmetic, operators in Java follow the order of operations
+    (known as PEMDAS) and parentheses can be used to change this order.
 </Aside>
 
-Operators can be used when creating variables or when changing a variable's value after it was initialized.
+Operators can be used when creating variables or when changing a variable later in code.
 In the example below, we have three variables whose values are set using different operators.
-Without running the code, think about what value would each variable hold.
+Without running the code, what value would each variable hold?
 
 ```java stage0/snippets/operators.java#variables
 
@@ -88,6 +102,7 @@ Without running the code, think about what value would each variable hold.
     </div>
 </details>
 
+Operators can also be used to change a variable later in code.
 In the example below, we have an integer variable named `magicNumber` that is set to 6. Using the multiplication operator, the value is adjusted inside the print statement.
 Without running the code, what is the value of `magicNumber`?
 
@@ -108,10 +123,26 @@ Without running the code, what is the value of `magicNumber`?
 
 <Aside type="note">
     When dividing two integers, the result will be an integer instead of a
-    double. Example: `System.out.print(7 / 2);` will print out 3. If you want
-    the result to return a `double`, like 3.5, the data type should be a
-    `double` instead of an `int`.
+    double. Example: `java System.out.print(7 / 2);` The example above will
+    print out 3. If you want the result to return a double, the data type should
+    be a double instead of an int.
 </Aside>
+
+The `++` and `--` operators are often used to change the value of the code as well.
+They help with incrementing and decrementing values and are used in conditionals (which are covered in a later stage).
+For now, we can use the operators to change variables without using conditionals.
+Like mentioned before, `++` increments the value of a variable by adding 1 and `--` decrements the value of a variable by subtracting 1.
+
+In the example below, we have two variables.
+
+```java stage0/snippets/operators.java#increments
+
+```
+
+In the first print statement, we have `++x`.
+This means it takes the value of x and increments it by 1 which gives us 7 because 6 + 1 is 7.
+In the second print statement, we have `--y`.
+This means that it takes the value of y, decrements it by 1 which gives us 6 since 7 - 1 is 6.
 
 ## Assignment Operators
 
@@ -171,60 +202,21 @@ These include:
     </tbody>
 </table>
 
-Assignment operators are similar to arithmetic operators.
-The main difference is that assignment operators are the shorthand version.
-Using assignment operators can help make code easier to read.
-It prevents having to write the variable name twice which can also be helpful in preventing code errors.
+Assignment Operators are similar to Arithmetic Operators, they are shorthand.
+Using the shorthand version can help make code easier to read.
+It prevents having to write the variable name twice which can also be helpful in preventing code issues.
 
-In the example below, we have variables `a` which is set to 10, and variable `b` which is set to 5. Since `+=` adds 1, `a` will hold the value of 11. Similarly, `b` will now hold the value of 4
+In the example below, we have variables `a` which is set to 10, and variable `b` which is set to 5. Since += adds 1, `a` will hold the value of 11. Similarly, `b` will now hold the value of 4
 
 ```java stage0/snippets/operators.java#arithmetic
 
 ```
 
-Sometimes placed in the category of "unary operators", the `++` and `--` operators are also used to change the value of the a variable.
-They help with incrementing and decrementing values and are used in conditionals (which are covered in a later stage).
-For now, we can use the operators to change variables without using conditionals.
-
-<table class="Increment/Decrement Operators">
-    <thead>
-        <tr>
-            <th>Operator</th>
-            <th>Description</th>
-            <th>Example</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>`++`</td>
-            <td>Increment: add 1 to a variable</td>
-            <td>int, double</td>
-            <td>`a++`</td>
-        </tr>
-        <tr>
-            <td>`--`</td>
-            <td>Decrement: subtracts 1 to a variable</td>
-            <td>int, double</td>
-            <td>`a--`</td>
-        </tr>
-    </tbody>
-</table>
-
-In the example below, we have two variables: `x` which is set to 6 and `y` which is set to 7.
-
-```java stage0/snippets/operators.java#increments
-
-```
-
-In the first print statement, we have `x++`.
-This means it takes the value of x and increments it by 1 which gives us 7 because 6 + 1 is 7.
-In the second print statement, we have `y--`.
-This means that it takes the value of y, decrements it by 1 which gives us 6 since 7 - 1 is 6.
-
 ## Comparison Operators
 
 Comparison operators are symbols that tell the program how to compare values.
-They can be used to help make decisions and are a main part of conditionals, which are discussed later in this stage.
+They can be used to help make decisions, which is an important part of programming.
+Comparison operators are a main part of conditionals, which are discussed later in this stage.
 
 <table class="Comparison Operators">
     <thead>
@@ -276,8 +268,8 @@ They can be used to help make decisions and are a main part of conditionals, whi
     </tbody>
 </table>
 
-Comparison operators help make decisions because they can return if the value of a comparison is true or false.
-If you remember from the previous section, these are `booleans`!
+Comparison Operators help programs make decisions because they can return if the value of a comparison is true or false.
+If you remember from the previous section, these are booleans!
 
 Comparison operators are very similar to what you see in math problems.
 In this example, we have two variables: `c` and `d`.
@@ -290,11 +282,11 @@ In the example below, it returns false because 2 is not greater than 4.
 
 ## Logical Operators
 
-Logical operators help a program make decisions by using true or false statements.
-They are also used in conditionals.
+Logical operators are symbols that let a program make decisions by combining true or false statements.
+They are also used when making decisions in a program and are also used in conditionals.
 
 <Aside type="note">
-    Logical operators also follow the order of operations (known as PEMDAS) and
+    Operators in Java follow the order of operations (known as PEMDAS) and
     parentheses can be used to change this order.
 </Aside>
 
@@ -326,7 +318,7 @@ They are also used in conditionals.
 </table>
 
 In the example below we have 2 variables: `answerOne` and `answerTwo`.
-We know `answerOne` is true since 5 is greater than 3. We also know that `answerTwo` is false since 9 is not less than 2.
+We know `answerOne` is true and `answerTwo` is false.
 Using that information and without running the code, what should the print statements print out?
 
 ```java stage0/snippets/operators.java#logical

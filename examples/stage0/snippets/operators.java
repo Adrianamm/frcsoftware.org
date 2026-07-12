@@ -19,32 +19,32 @@ void main() {
     int x = 6;
     int y = 7;
 
-    System.out.println(++x);
-    System.out.println(--y);
+    System.out.println(x++);
+    System.out.println(y--);
     // [/increments]
 
     // [arithmetic]
-    int A = 10;
-    int B = 5;
-    A += 1;
-    B -= 1;
+    int a = 10;
+    int b = 5;
+    a += 1;
+    b -= 1;
 
-    System.out.println(A); // prints 11
-    System.out.println(B); // prints 4
+    System.out.println(a); // prints 11
+    System.out.println(b); // prints 4
     // [/arithmetic]
 
     // [comparison]
-    int C = 2;
-    int D = 4;
-    System.out.print(A > B);
+    int c = 2;
+    int d = 4;
+    System.out.print(c > d);
     // [/comparison]
 
     // [logical]
-    boolean AnswerOne = 5 > 3; // True
-    boolean AnswerTwo = 9 < 2; // False
+    boolean answerOne = 5 > 3; // True
+    boolean answerTwo = 9 < 2; // False
 
-    System.out.println(AnswerOne && AnswerTwo);
-    System.out.println(AnswerOne || AnswerTwo);
-    System.out.println(!AnswerOne);
+    System.out.println(answerOne && answerTwo);
+    System.out.println(answerOne || answerTwo);
+    System.out.println(!answerOne);
     // [/logical]
 }
