@@ -18,7 +18,7 @@ void main() {
     }
     // [/ifSyntax]
 
-    //[ifExample]
+    // [ifExample]
     double distance = 6;
     if (distance < 10) {
         System.out.println("Motors are spinning");
@@ -64,7 +64,7 @@ void main() {
     }
     // [/elseExample]
 
-    //[conditionalExample]
+    // [conditionalExample]
     distance = 21;
     if (distance < 10) {
         System.out.println("Motors are at half speed");
@@ -76,6 +76,6 @@ void main() {
         System.out.println("Motors are not spinning");
         drivetrain.setThrottle(0); // stops the motors
     }
-    //[/conditionalExample]
+    // [/conditionalExample]
 
 }
