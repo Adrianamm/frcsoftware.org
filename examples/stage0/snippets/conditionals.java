@@ -1,4 +1,11 @@
+boolean condition_A;
+boolean condition_B;
+boolean condition;
+
+public Drivetrain drivetrain = new drivetrain();
+
 void main() {
+   
     // [ifSyntax]
     if (condition) {
     // code to run when condition is true
