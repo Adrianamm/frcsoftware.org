@@ -1,8 +1,9 @@
 boolean condition_A;
 boolean condition_B;
 boolean condition;
+double distance;
 
-public Drivetrain drivetrain = new drivetrain();
+public Drivetrain drivetrain = new Drivetrain();
 
 void main() {
    
