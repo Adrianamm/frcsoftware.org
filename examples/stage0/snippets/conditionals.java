@@ -14,9 +14,9 @@ void main() {
     // [/ifExample]
 
     // [elseIfSyntax]
-    if (Condition_A) {
-    // code to run when Condition_A is true
-    } else if (Condition_B) {
+    if (condition_A) {
+    // code to run when condition_A is true
+    } else if (condition_B) {
         // code to run when Condition_B is true
     }
     // [/elseIfSyntax]
@@ -40,8 +40,19 @@ void main() {
     }
     // [/ifElseSyntax]
 
-    // [conditionalExample]
+    // [elseExample]
     double distance = 21;
+    if (distance < 10) {
+        System.out.println("Motors are at half speed");
+        drivetrain.setThrottle(0.5); // runs the motors at half speed
+    } else {
+        System.out.println("Motors are not spinning");
+        drivetrain.setThrottle(0); // stops the motors
+    }
+    // [/elseExample]
+
+    //[conditionalExample]
+        double distance = 21;
     if (distance < 10) {
         System.out.println("Motors are at half speed");
         drivetrain.setThrottle(0.5); // runs the motors at half speed
@@ -52,6 +63,6 @@ void main() {
         System.out.println("Motors are not spinning");
         drivetrain.setThrottle(0); // stops the motors
     }
-    // [/conditionalExample]
+    //[/conditionalExample]
 
 }
