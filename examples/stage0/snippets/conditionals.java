@@ -8,8 +8,7 @@ class Drivetrain {
     }
 }
 
-    // Instantiate the custom drivetrain object instead of a generic Object
-    static Drivetrain drivetrain = new Drivetrain();
+Drivetrain drivetrain = new Drivetrain();
 
 void main() {
    
