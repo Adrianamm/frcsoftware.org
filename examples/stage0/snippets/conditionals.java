@@ -1,7 +1,10 @@
+// [variables]
 boolean condition_A;
 boolean condition_B;
 boolean condition;
+// [/variables]
 
+// [drivetrain]
 class Drivetrain {
     public double setThrottle(double speed) {
        return speed;
@@ -9,6 +12,7 @@ class Drivetrain {
 }
 
 Drivetrain drivetrain = new Drivetrain();
+// [/drivetrain]
 
 void main() {
    
