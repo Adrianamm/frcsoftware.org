@@ -1,9 +1,8 @@
 boolean condition_A;
 boolean condition_B;
 boolean condition;
-double distance;
 
-public Drivetrain drivetrain = new Drivetrain();
+Object drivetrain = new Object();
 
 void main() {
    
@@ -30,7 +29,7 @@ void main() {
     // [/elseIfSyntax]
 
     // [elseIfExample]
-    double distance = 15;
+    distance = 15;
     if (distance < 10) {
         System.out.println("Motors are half speed");
         drivetrain.setThrottle(0.5); // runs the motors at half speed
@@ -49,7 +48,7 @@ void main() {
     // [/ifElseSyntax]
 
     // [elseExample]
-    double distance = 21;
+    distance = 21;
     if (distance < 10) {
         System.out.println("Motors are at half speed");
         drivetrain.setThrottle(0.5); // runs the motors at half speed
@@ -60,7 +59,7 @@ void main() {
     // [/elseExample]
 
     //[conditionalExample]
-        double distance = 21;
+    distance = 21;
     if (distance < 10) {
         System.out.println("Motors are at half speed");
         drivetrain.setThrottle(0.5); // runs the motors at half speed
