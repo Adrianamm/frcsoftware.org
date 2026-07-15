@@ -78,10 +78,10 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                                 //     label: 'Conditionals',
                                 //     slug: 'learning-course/intro-to-java/conditionals',
                                 // },
-                                // {
-                                //     label: 'Loops',
-                                //     slug: 'learning-course/intro-to-java/loops',
-                                // },
+                                {
+                                    label: 'Loops',
+                                    slug: 'learning-course/intro-to-java/loops',
+                                },
                                 // {
                                 //     label: 'Objects',
                                 //     slug: 'learning-course/intro-to-java/objects',
@@ -245,10 +245,6 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                     slug: 'getting-started/website-feature-guide',
                 },
                 {
-                    label: 'Intro to Programming',
-                    slug: 'getting-started/intro-to-prog',
-                },
-                {
                     label: 'Required Tools',
                     slug: 'getting-started/required-tools',
                 },
@@ -280,6 +276,10 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                 {
                     label: 'Java fundamentals',
                     slug: 'intro-to-java/java-fundamentals',
+                },
+                {
+                    label: 'Loops',
+                    slug: 'intro-to-java/loops',
                 },
             ],
         },

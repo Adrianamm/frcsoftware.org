@@ -1,0 +1,137 @@
+---
+title: Loops
+description: An Intro loops in Java
+prev: false
+next: false
+---
+
+A robot might need to run
+
+
+We will be going over two types of loops which are:
+* while
+* for
+
+<Aside type="note">
+There is also another type of loop called `do while` and because it's not commonly used in FRC we will not be covering it.
+However if you want to learn more about `do while` loops, you can learn more on w3school's page on <a href="https://www.w3schools.com/java/java_while_loop_do.asp"> `do while` loops </a>.
+</Aside>
+
+At first, conditionals and loops may seem similar but they have different purposes.
+Conditionals are used to make decisions based on whether the condition is true or false.
+Loops are used to repeat code until the condition is met.
+This can be thought of conditionals make decisions, and loops are for repeating.
+
+
+## while 
+`while` loops are the most simple type of loops. If you have used Scratch before, this is similar to the repeat block.
+If you have taken an CS class, you might already be familiar with a `while` loop.
+The syntax of a `while` loops is as shown:
+```java
+while (condition) {
+    // code to run when condition is true
+}
+```
+
+You might notice that a `while` loop has a similar syntax to conditionals that we discussed in the previous section. A `while` loop syntax includes: 
+* `while` is a keyword
+* `( )` holds the condition that is either true or false. Example: (5 > 1) is a condition and it is true because 5 is greater than 1
+* `{` an open bracket is used to denote the opening of the loop
+* `}` a closed bracket is used to denote the end of the loop
+
+Another way of understanding how a `while` loop works is with the flow chart below
+<ContentFigure src="/loops/whileloop.png" width="400px" height="800px" />
+
+Similar to conditionals, a `while` loop will run the code inside the loop when the condition is true. 
+then go back to the condition. If the condition is true, the block of code will run again. 
+This will repeat until the condition is false. When it's false, the code inside the loop will be skipped. To understand how this works, let's look at an example.
+
+```java
+int i = 0;
+while (i < 6){
+  System.out.println(i);
+  i++;
+}
+```
+In the example, there is an `int` called `i` which holds the value 0. The `while` loop has the condition `i < 6`.
+First, the compiler checks if the condition is true. 0 is less than 6 so the code inside the loop runs and the value of `i`, which is currently 0, is printed to the terminal.
+The value of `i` is also updated and changes to 1. 
+Now the condition is checking to see if 1 is less than 6. We know that 1 is less than 6, so the value of `i` gets printed and the value of `i` is increased by 1.
+This repeats and eventually `i`'s value becomes 6. 
+6 is not less than 6, therefore the loop is done and the code inside the `while` loop does not run. 
+
+<Aside type="tip">
+Does the ``i++`` look familiar? This was covered in the operator section. If you need a refresher on what an operator is and how it works, check out the operator page.
+</Aside>
+
+
+Lets look at an example! In the example below we have
+
+```java
+int AutoTime = 0;
+while (AutoTime <= 15){
+  System.out.println("AutoMode is happening");
+  AutoTime++;
+}
+
+```
+Without running the code, what do you think happens?
+
+
+
+## for
+Sometimes, we might want code that loops an exact number of times. This can be done with a `for` loop.
+A 'for' loop can be thought of as a `while` loop but we have control over the amount of times the code inside runs. 
+The syntax of a ``for`` is as follows:
+
+```java
+for (statement 1; statement 2; statement 3) {
+   // code to run when statement 2 is true
+}
+```
+In the syntax:
+* `for` is a keyword
+* `()` holds the three statements
+* ``{`` an open bracket is used to denote the opening of the loop
+* ``}`` a closed bracket is used to denote the end of the loop
+
+The three statements are
+* initialization: creates a variable that sets the starting point of the loop. 
+* condition: a condition, which uses the variable, that is checked before each iteration. If the condition is true, the code inside the loop runs
+* update: updates the variable created in initialization after each iteration
+
+The best way to explain how `for` loops work is with an example.
+```java
+for (int i = 0; i < 5; i++){
+  System.out.println(i);
+}
+```
+In this example, we create a variable `i` that is set to 0. When i is less than 5, the code inside the `for` loop runs. 
+In this case, it's printing the value of `i`. Then it goes back to the update statement which is `i++`, now `i` has increased by 1, `i`'s value is now 1.
+We check the condition, 1 is less than 5, so the code inside runs, the new value of `i` is printed, `i` is updated and this repeats until `i` is no longer less than 5.
+
+Another way of understanding how a for loop works is with the flow chart below
+
+## Be Careful about Infinite Loops
+It is important to make sure that the condition can become false. If the condition is always true, the loop will always run causing an infinite loop.
+Infinite loops can be prevented by ensuring that the value inside the condition increments or decrements.
+
+```java
+int timer = 0;
+while (timer < 7){
+    drivetrain.setThrottle(1); // sets drive motors to full speed 
+}
+```
+In this example, we want our drive train to run for 7 seconds. We have our variable called `timer` which is set to 0. 
+0 is less than 7 so the code inside runs and the robot drives forward at full speed. However, `timer`'s value never changes.
+This means `timer` will always be 0. 0 is less than 7 so the loop will continuously run and the robot never stops driving!
+
+To fix this, we would make sure to increment the timer value as shown below.
+```java
+int timer = 0;
+while (timer < 7){
+    drivetrain.setThrottle(1); // sets drive motors to full speed 
+    timer++; // increments timer by 1
+}
+```
+`timer` now increments by 1 each time the loop is run, and the robot will stop driving after 7 seconds.
