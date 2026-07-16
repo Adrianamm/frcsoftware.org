@@ -83,7 +83,7 @@ Looking at the example below, what should happen?
 
 The condition is `distance < 10`.
 We know `distance` is equal to 6, therefore we can think of the condition saying 6 < 10. 6 is less than 10 which makes the condition true.
-This means the code inside the `if` statement runs, which prints "Motors are spinning" and the spins the motors at half speed.
+This means the code inside the `if` block runs, which prints "Motors are spinning" and the spins the motors at half speed.
 
 ## else
 
@@ -133,9 +133,9 @@ The syntax is similar to an `if` statement but now it has `else if` at the end.
 Let's break down what this new addition means.
 `else if` is a keyword that allows the conditional to run a different task if the if statement is false.
 
-If `condition_A` is true then the code inside the `if` statement will run.
+If `condition_A` is true then the code inside the `if` block will run.
 If `condition_A` if false, then it will go to the `else if` statement.
-If `condition_B` is true, the code inside the `else if` statement will run.
+If `condition_B` is true, the code inside the `else if` block will run.
 If `condition_B` if false, then it will exit the statement and none of the code will run.
 This is also described in the flowchart below
 
@@ -154,7 +154,7 @@ The first condition is `distance < 10`.
 15 is not less than 10, which means that condition is false.
 Therefore we go to the next part of the conditional which is the `else if`.
 The `else if` has the condition `distance > 10`.
-15 is greater than 10 so the code inside the conditional runs.
+15 is greater than 10 so the code inside this `else if` block runs.
 This means the motors are set to drive at full speed and "Motors are at full speed" gets printed to the terminal.
 
 ## Putting Everything Together
