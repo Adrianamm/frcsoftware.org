@@ -18,9 +18,9 @@ This section will cover three types of conditionals which are:
 - else if
 
 <Aside type="note">
-    There is also another type of conditional called switch, because it's not
-    commonly used in basic FRC we will not be covering it in this section.
-    However, if you want to learn more about switch conditionals, you can learn
+    There is also another type of conditional, called switch, but we will not be covering it in this section
+    because it is not used as frequently in FRC programming.
+    However, if you want to learn more about the switch statement, you can learn
     more on w3school's page on{' '}
     <a href="https://www.w3schools.com/java/java_switch.asp">
         {' '}
@@ -83,7 +83,7 @@ Looking at the example below, what should happen?
 
 The condition is `distance < 10`.
 We know `distance` is equal to 6, therefore we can think of the condition saying 6 < 10. 6 is less than 10 which makes the condition true.
-This means the code inside the `if` statement runs, it prints "Motors are spinning" and the motors spin at half speed.
+This means the code inside the `if` statement runs, which prints "Motors are spinning" and the spins the motors at half speed.
 
 ## else
 
@@ -99,8 +99,8 @@ The syntax for an else statement is as follows:
 ```
 
 `else` statements do not have parentheses because they do not need a condition to decide if they should run or not.
-How this works is the following: If if statement's condition is true, then the the code inside will run.
-If the if statement's condition is false, the if statement will be skipped, and the code inside the 'else' statement will run.
+Here's how this works: if `if` statement's condition is `true`, then the the code inside will run.
+If the `if` statement's condition is `false`, the `if` block will be skipped, and the code inside the `else` block will run.
 
 This is also described in the flowchart below
 
@@ -159,7 +159,7 @@ This means the motors are set to drive at full speed and "Motors are at full spe
 
 ## Putting Everything Together
 
-Our code above has the robot drive at full speed if the distance is greater than 10cm, has the robot drive at half speed if the distance is less than 10cm, but the robot never stops if it reaches its target distance.
+Our code above has the robot drive at full speed if the distance is greater than 10cm, and drive at half speed if the distance is less than 10cm, but it doesn't stop if it reaches its target distance.
 You could add another else if, or you could put everything that we learned above together and add an else conditional.
 
 ```java stage0/snippets/conditionals.java#conditionalExample
