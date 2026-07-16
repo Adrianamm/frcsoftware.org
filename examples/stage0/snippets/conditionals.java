@@ -27,8 +27,8 @@ void main() {
     // [ifExample]
     double distance = 6;
     if (distance < 10) {
-    System.out.println("Motors are spinning");
-    drivetrain.setThrottle(1); // runs the motor at full speed
+        System.out.println("Motors are spinning");
+        drivetrain.setThrottle(1); // runs the motor at full speed
     }
     // [/ifExample]
 
@@ -43,11 +43,11 @@ void main() {
     // [elseIfExample]
     distance = 15;
     if (distance < 10) {
-    System.out.println("Motors are half speed");
-    drivetrain.setThrottle(0.5); // runs the motors at half speed
+        System.out.println("Motors are half speed");
+        drivetrain.setThrottle(0.5); // runs the motors at half speed
     } else if (distance > 10) {
-    System.out.println("Motors are at full speed");
-    drivetrain.setThrottle(1); // runs the motors at full speed
+        System.out.println("Motors are at full speed");
+        drivetrain.setThrottle(1); // runs the motors at full speed
     }
     // [/elseIfExample]
 
@@ -62,25 +62,25 @@ void main() {
     // [elseExample]
     distance = 21;
     if (distance < 10) {
-    System.out.println("Motors are at half speed");
-    drivetrain.setThrottle(0.5); // runs the motors at half speed
+        System.out.println("Motors are at half speed");
+        drivetrain.setThrottle(0.5); // runs the motors at half speed
     } else {
-    System.out.println("Motors are not spinning");
-    drivetrain.setThrottle(0); // stops the motors
+        System.out.println("Motors are not spinning");
+        drivetrain.setThrottle(0); // stops the motors
     }
     // [/elseExample]
 
     // [conditionalExample]
     distance = 21;
     if (distance < 10) {
-    System.out.println("Motors are at half speed");
-    drivetrain.setThrottle(0.5); // runs the motors at half speed
+        System.out.println("Motors are at half speed");
+        drivetrain.setThrottle(0.5); // runs the motors at half speed
     } else if (distance <= 20) {
-    System.out.println("Motors are at full speed");
-    drivetrain.setThrottle(1); // runs the motors at full speed
+        System.out.println("Motors are at full speed");
+        drivetrain.setThrottle(1); // runs the motors at full speed
     } else {
-    System.out.println("Motors are not spinning");
-    drivetrain.setThrottle(0); // stops the motors
+        System.out.println("Motors are not spinning");
+        drivetrain.setThrottle(0); // stops the motors
     }
     // [/conditionalExample]
 
