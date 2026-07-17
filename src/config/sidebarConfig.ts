@@ -33,7 +33,7 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
             items: [
                 { label: 'Overview', slug: 'learning-course' },
                 {
-                    label: 'Feature Guide',
+                    label: 'Website Feature Guide',
                     slug: 'learning-course/getting-started/website-feature-guide',
                 },
                 {
@@ -70,14 +70,14 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                                     label: 'Java Fundamentals',
                                     slug: 'learning-course/intro-to-java/java-fundamentals',
                                 },
-                                {
-                                    label: 'Operators',
-                                    slug: 'learning-course/intro-to-java/operators',
-                                },
                                 // {
-                                //     label: 'Conditionals',
-                                //     slug: 'learning-course/intro-to-java/conditionals',
+                                //     label: 'Operators',
+                                //     slug: 'learning-course/intro-to-java/operators',
                                 // },
+                                {
+                                    label: 'Conditionals',
+                                    slug: 'learning-course/intro-to-java/conditionals',
+                                },
                                 // {
                                 //     label: 'Loops',
                                 //     slug: 'learning-course/intro-to-java/loops',
@@ -243,10 +243,6 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                 {
                     label: 'Website Feature Guide',
                     slug: 'getting-started/website-feature-guide',
-                },
-                {
-                    label: 'Intro to Programming',
-                    slug: 'getting-started/intro-to-prog',
                 },
                 {
                     label: 'Required Tools',
