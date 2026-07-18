@@ -40,8 +40,8 @@ void main() {
     // [/comparison]
 
     // [logical]
-    boolean answerOne = 5 > 3; // True
-    boolean answerTwo = 9 < 2; // False
+    boolean fiveIsGreaterThanThree = 5 > 3; // True
+    boolean nineIsLessThanTwo = 9 < 2; // False
 
     System.out.println(answerOne && answerTwo);
     System.out.println(answerOne || answerTwo);
