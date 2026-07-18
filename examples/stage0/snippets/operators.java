@@ -43,8 +43,8 @@ void main() {
     boolean fiveIsGreaterThanThree = 5 > 3; // True
     boolean nineIsLessThanTwo = 9 < 2; // False
 
-    System.out.println(answerOne && answerTwo);
-    System.out.println(answerOne || answerTwo);
-    System.out.println(!answerOne);
+    System.out.println(fiveIsGreaterThanThree && nineIsLessThanTwo);
+    System.out.println(fiveIsGreaterThanThree || nineIsLessThanTwo);
+    System.out.println(!fiveIsGreaterThanThree);
     // [/logical]
 }
