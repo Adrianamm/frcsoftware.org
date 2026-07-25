@@ -4,33 +4,51 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 // [variables]
-int CLIMBER_ID = 51;
-double UP_POSITION = -33.5;
-double DOWN_POSITION = 0;
+boolean condition = true;
+int statement1 = 0;
+boolean statement2 = true;
+int statement3 = 1;
 // [/variables]
 
 void main() {
-    // [printLiteral]
-    System.out.print("hello!");
-    // [/printLiteral]
+    // [whileSyntax]
+    while (condition) {
+    // code to run when condition is true
+    }
+    // [/whileSyntax]
 
-    // [printVariable]
-    int number = 4;
-    System.out.print(number); // prints out the value 4
-    // [/printVariable]
+    // [whileExample]
+    int i = 0; 
+    while (i < 6) {
+        System.out.println(i);
+        i++;
+    }
+    // [/whileExample]
 
-    // [singleLineComment]
-    // This prints Hello World
-    System.out.print("Hello World");
-    // [/singleLineComment]
+    // [whileExample2]
+    int autoTime = 0;
+    while (autoTime <= 15){
+        System.out.println("AutoMode is happening");
+        autoTime++;
+    }
+    // [/whileExample2]
 
-    // [inlineComment]
-    System.out.print("Hello World"); // This prints Hello World
-    // [/inlineComment]
+    // [forSyntax]
+    for (statement1; statement2; statement3) {
+        // code to run when statement 2 is true
+    }
+    // [/forSyntax]
 
-    // [multiLineComment]
-    /* This prints Hello World
-    This is another line */
-    System.out.print("Hello World");
-    // [/multiLineComment]
+    // [forExample]
+    for (int i = 0; i < 5; i++){
+        System.out.println(i);
+    }
+    // [/forExample]
+
+    // [forExample2]
+    int timer = 0;
+    while (timer < 7){
+        drivetrain.setThrottle(1); // sets drive motors to full speed 
+    }
+    // [/forExample2]
 }
