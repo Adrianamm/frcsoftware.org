@@ -78,10 +78,10 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                                     label: 'Conditionals',
                                     slug: 'learning-course/intro-to-java/conditionals',
                                 },
-                                // {
-                                //     label: 'Loops',
-                                //     slug: 'learning-course/intro-to-java/loops',
-                                // },
+                                {
+                                    label: 'Loops',
+                                    slug: 'learning-course/intro-to-java/loops',
+                                },
                                 // {
                                 //     label: 'Objects',
                                 //     slug: 'learning-course/intro-to-java/objects',
