@@ -9,5 +9,20 @@ export default {
         remarkMdx,
         remarkPresetLintRecommended,
         remarkNoInlineCodeFences,
+        remarkNoHtmlLinks,
+        [
+            remarkLintNoDeadUrls,
+            {
+                skipLocalhost: false,
+                skipOffline: true,
+                skipUrlPatterns: [
+                    'https://github.com/signup',
+                    'https://code.visualstudio.com/',
+                    'https://www.conventionalcommits.org/en/v1.0.0/',
+                    'https://vale.sh/',
+                    'https://squoosh.app/',
+                ], // Add known flaky URL patterns here
+            },
+        ],
     ],
 };
