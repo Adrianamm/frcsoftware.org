@@ -117,12 +117,8 @@ In this example, we want our drive train to run for 7 seconds. We have our varia
 This means `timer` will always be 0. 0 is less than 7 so the loop will continuously run and the robot never stops driving!
 
 To fix this, we would make sure to increment the timer value as shown below.
-```java
-int timer = 0;
-while (timer < 7){
-    drivetrain.setThrottle(1); // sets drive motors to full speed 
-    timer++; // increments timer by 1
-}
+```java #Infinite2
+
 ```
 `timer` now increments by 1 each time the loop is run, and the robot will stop driving after 7 seconds.
 

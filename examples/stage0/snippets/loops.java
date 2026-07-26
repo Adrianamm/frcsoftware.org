@@ -45,10 +45,18 @@ void main() {
     }
     // [/forExample]
 
-    // [forExample2]
+    // [Infinite1]
     int timer = 0;
     while (timer < 7){
         drivetrain.setThrottle(1); // sets drive motors to full speed 
     }
-    // [/forExample2]
+    // [/Infinite1]
+
+    // [Infinite2]
+    int timer = 0;
+    while (timer < 7){
+        drivetrain.setThrottle(1); // sets drive motors to full speed 
+        timer++; // increments timer by 1
+    }
+    // [/Infinite2]
 }
