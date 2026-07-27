@@ -20,7 +20,7 @@ void main() {
     // [whileExample]
     int i = 0; 
     while (i < 6) {
-        System.out.println(i);
+        System.out.println(i); // prints 0, 1, 2, 3, 4, 5
         i++;
     }
     // [/whileExample]
@@ -42,7 +42,7 @@ void main() {
 
     // [forExample]
     for (int i = 0; i < 5; i++){
-        System.out.println(i);
+        System.out.println(i); // prints 0, 1, 2, 3, 4
     }
     // [/forExample]
 
