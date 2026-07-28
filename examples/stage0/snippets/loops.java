@@ -34,7 +34,6 @@ void main() {
     // [/whileExample2]
 
     // [forSyntax]
-     rli:ignore
     for (statement1; statement2; statement3) {
         // code to run when statement 2 is true
     }
