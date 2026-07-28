@@ -5,10 +5,6 @@
  */
 
 boolean condition = true;
-int statement1 = 0;
-boolean statement2 = true;
-int statement3 = 1;
-
 
 void main() {
     // [whileSyntax]
@@ -33,11 +29,6 @@ void main() {
     }
     // [/whileExample2]
 
-    // [forSyntax]
-    for (statement1; statement2; statement3) {
-        // code to run when statement 2 is true
-    }
-    // [/forSyntax]
 
     // [forExample]
     for (int i = 0; i < 5; i++){
