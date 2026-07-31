@@ -29,7 +29,7 @@ In Stage 1a, you will use either SparkMax or TalonFX.
 
 A SparkMax is the motor controller that belongs to the REV ecosystem.
 REV is a vendor that has electronic and hardware for FIRST teams.
-SparkMax are used to control NEO motors.
+SparkMax are mainly used to control NEO motors but may also control brushed motors.
 
 ### TalonFX
 
@@ -48,5 +48,5 @@ It can be thought of as the "brain" of the robot.
 CAN is Controller Area Network.
 Typically using yellow and green cables, it is used to communicate with motor controllers.
 For stage 1a, CAN is used to communicate with motor controllers.
-A **CAN Bus** describes the type of connection.
-A CAN bus starts at the SystemCore, connects all the motor controllers, and typically ends at the [Power Distribution Hub](https://docs.revrobotics.com/ion-control/pdh/overview).
+A **CAN Bus** describes a chain of devices connected together by a single pair of CAN wires.
+A CAN bus starts at the SystemCore, connects several devices, and typically ends at the [Power Distribution Hub](https://docs.revrobotics.com/ion-control/pdh/overview).
