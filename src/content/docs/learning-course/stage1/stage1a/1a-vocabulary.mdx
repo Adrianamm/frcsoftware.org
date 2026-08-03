@@ -23,13 +23,13 @@ the joystick's y axis drives the robot forward and backwards, and the joystick's
 
 Motor controllers are the electronic interfaces which control the speed and direction of the motor.
 When writing code to control a motor, you are writing code to control the motor's motor controller.
-In Stage 1a, you will use either SPARK MAX or TalonFX.
+In Stage 1a, you will use either the SPARK MAX or the TalonFX.
 
 ### SPARK MAX
 
 A SPARK MAX is the motor controller that belongs to the REV ecosystem.
 REV is a vendor that has electronic and hardware for FIRST teams.
-SparkMax are mainly used to control NEO motors but may also control brushed motors.
+SPARK MAXes are mainly used to control NEO motors, but may also control brushless motors from other vendors, or even brushed motors.
 
 ### TalonFX
 
@@ -45,8 +45,8 @@ It can be thought of as the "brain" of the robot.
 
 ## CAN
 
-CAN is Controller Area Network.
-Typically using yellow and green cables, it is used to communicate with motor controllers.
+CAN stands for Controller Area Network, and is used to communicate with motor controllers and other devices on the robot.
+CAN communication typically uses twisted pairs of yellow and green cables.
 For stage 1a, CAN is used to communicate with motor controllers.
 A **CAN Bus** describes a chain of devices connected together by a single pair of CAN wires.
-A CAN bus starts at the SystemCore, connects several devices, and typically ends at the [Power Distribution Hub](https://docs.revrobotics.com/ion-control/pdh/overview).
+A CAN bus starts at the Systemcore, connects with any number of devices, and typically ends at the [Power Distribution Hub](https://docs.revrobotics.com/ion-control/pdh/overview).
