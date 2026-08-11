@@ -22,14 +22,29 @@ void main() {
     // [/whileExample]
 
     // [whileExample2]
-    int autoTime = 0;
+    int autoTimer = 0;
     while (autoTime <= 15){
         System.out.println("AutoMode is happening");
-        autoTime++;
+        autoTimer++;
     }
     // [/whileExample2]
 
 
+    // [ForExample1]
+    int i = 0;
+    while (i < 6) {
+        System.out.println("Hi!");
+        i++;
+    }
+    // [/ForExample1]
+
+    // [ForExample2]
+    for (int i = 0; i < 6; i++) {
+    System.out.println("Hi!");
+    }
+    //[/ForExample2]
+
+    //
     // [forExample]
     for (int i = 0; i < 5; i++){
         System.out.println(i); // prints 0, 1, 2, 3, 4

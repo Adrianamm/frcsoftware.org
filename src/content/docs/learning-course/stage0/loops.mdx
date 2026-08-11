@@ -23,7 +23,7 @@ We will be going over two types of loops which are:
     loops](https://www.w3schools.com/java/java_while_loop_do.asp)
 </Aside>
 
-Conditionals, and loops may seem similar but they have different purposes.
+Conditionals and loops may seem similar but they have different purposes.
 Conditionals are used to make decisions based on whether the condition is true or false.
 Loops are used to repeat code until the condition is met.
 This can be thought of conditionals make decisions, and loops are for repeating.
@@ -51,7 +51,11 @@ A `while` loop's syntax includes:
 
 Another way of understanding how a `while` loop works is with the flow chart below
 
-<ContentFigure src="/loops/WhileLoop.webp" width="400px" height="800px" />
+<ContentFigure
+    src="/learning-course/stage0/loops/WhileLoop.webp"
+    width="300px"
+    height="300px"
+/>
 
 Similar to conditionals, a `while` loop will run the code block inside the `while` loop when the condition is true.
 After the code block is run, it goes back to the condition.
@@ -87,27 +91,29 @@ In the example below we have:
 
 Without running the code, what do you think happens?
 
-`autoTime` is set to 0. The `while` loop's condition is `autoTime <= 15`.
+`autoTimer` is set to 0. The `while` loop's condition is `autoTimer <= 15`.
 0 is less than 15 so the code enters the `while` code block, and prints outs `Auto is happening`.
 `autoTimer++` is run which increases `autoTimer`'s value by one.
 The code goes back to the condition, 1 is less than 15, so the code enters the `while` code block again, printing out `Auto is happening`.
-Like before, `autoTimer++` runs which increases `autoTimer` by one again making the value be 2. This repeats until `autoTime` is 15. When that happens the condition is false and the `while` loop is skipped.
+Like before, `autoTimer++` runs which increases `autoTimer` by one again making the value be 2. This repeats until `autoTimer` is 16. When that happens the condition is false and the `while` loop is skipped.
 
 ## for
 
-Sometimes, we might want code that loops an exact number of times.
-This can be done with a `for` loop.
-The syntax of a `for` is as follows:
+With the power of while loops, we're able to repeat a block of code any number of times, like so:
 
-{/* rli:ignore */}
+```java #ForExample1
 
-```java
-for (statement1; statement2; statement3) {
-  // code to run when statement 2 is true
-}
 ```
 
-In the syntax:
+This loop depends on 3 important statements:
+`int i = 0;`, `i < 6`, and `i++`.
+For loops allow us to inline these statements:
+
+```java #ForExample2
+
+```
+
+Using the example above, we can see that the `for` loop syntax goes as follows:
 
 - `for` is a keyword
 - `()` holds the three statements
@@ -116,12 +122,15 @@ In the syntax:
 
 The three statements are
 
-- initialization: creates a variable that sets the starting point of the loop.
-- condition: a condition, which uses the variable, that is checked before each iteration.
+- **initialization**: creates a variable that sets the starting point of the loop.
+  This is the `int i = 0;` seen in the example above.
+- **condition**: a condition, which uses the variable, that is checked before each iteration.
+  This is `i < 6;`.
   If the condition is true, the code inside the loop runs
-- update: updates the variable created in initialization after each iteration
+- **update**: updates the variable created in initialization after each iteration.
+  Lastly, that's `i++`;
 
-The best way to explain how `for` loops work is with an example.
+Let's look at another example:
 
 ```java #forExample
 
@@ -132,15 +141,18 @@ Then it goes back to the update statement which is `i++`, `i` has increased by 1
 We check the condition, 1 is less than 5, so `for` code block runs, the new value of `i` is printed, `i` is updated and this repeats until `i` is no longer less than 5.
 When `i` is no longer less than 5, the `for` loop is skipped.
 
-Another way of understanding how a for loop works is with the flow chart below
-
-<ContentFigure src="/loops/Forloop.webp" width="400px" height="800px" />
-
 ## Be Careful about Infinite Loops
 
 It is important to make sure that the condition can become false.
 If the condition is always true, the loop will always run causing an infinite loop.
 Infinite loops can be prevented by ensuring that the value inside the condition changes by incrementing or decrementing.
+
+<Aside type="note">
+
+When diving into FRC programming, you will find that infinite loops are occasionally encouraged (such as in commands).
+This will be talked about more in Stage 1
+
+</Aside>
 
 ```java #Infinite1
 
