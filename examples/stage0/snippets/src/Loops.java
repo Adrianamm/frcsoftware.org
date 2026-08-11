@@ -4,39 +4,48 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
-boolean condition = true;
+class Drivetrain {
+    public void setThrottle(double speed) {}
+}
+
+boolean condition = false;
+Drivetrain drivetrain = new Drivetrain();
 
 void main() {
     // [whileSyntax]
     while (condition) {
-    // code to run when condition is true
+        // code to run when condition is true
     }
     // [/whileSyntax]
 
-    // [whileExample]
-    int i = 0; 
-    while (i < 6) {
-        System.out.println(i); // prints 0, 1, 2, 3, 4, 5
-        i++;
+    {
+        // [whileExample]
+        int i = 0;
+        while (i < 6) {
+            System.out.println(i); // prints 0, 1, 2, 3, 4, 5
+            i++;
+        }
+        // [/whileExample]
     }
-    // [/whileExample]
 
     // [whileExample2]
     int autoTimer = 0;
-    while (autoTime <= 15){
+    while (autoTimer <= 15){
         System.out.println("AutoMode is happening");
         autoTimer++;
     }
     // [/whileExample2]
 
 
-    // [ForExample1]
-    int i = 0;
-    while (i < 6) {
-        System.out.println("Hi!");
-        i++;
+    {
+        // [ForExample1]
+        int i = 0;
+        while (i < 6) {
+            System.out.println("Hi!");
+            i++;
+        }
+        // [/ForExample1]
     }
-    // [/ForExample1]
 
     // [ForExample2]
     for (int i = 0; i < 6; i++) {
@@ -51,12 +60,14 @@ void main() {
     }
     // [/forExample]
 
-    // [Infinite1]
-    int timer = 0;
-    while (timer < 7){
-        drivetrain.setThrottle(1); // sets drive motors to full speed 
+    if (false) {
+        // [Infinite1]
+        int timer = 0;
+        while (timer < 7){
+            drivetrain.setThrottle(1); // sets drive motors to full speed
+        }
+        // [/Infinite1]
     }
-    // [/Infinite1]
 
     // [Infinite2]
     int timer = 0;
