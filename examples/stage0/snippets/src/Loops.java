@@ -10,6 +10,7 @@ class Drivetrain {
 
 boolean condition = false;
 Drivetrain drivetrain = new Drivetrain();
+Drivetrain drivetrain = new Drivetrain();
 
 void main() {
     // [whileSyntax]
@@ -49,7 +50,7 @@ void main() {
 
     // [ForExample2]
     for (int i = 0; i < 6; i++) {
-    System.out.println("Hi!");
+        System.out.println("Hi!");
     }
     //[/ForExample2]
 
@@ -69,11 +70,13 @@ void main() {
         // [/Infinite1]
     }
 
-    // [Infinite2]
-    int timer = 0;
-    while (timer < 7){
-        drivetrain.setThrottle(1); // sets drive motors to full speed 
-        timer++; // increments timer by 1
+    {
+        // [Infinite2]
+        int timer = 0;
+        while (timer < 7) {
+            drivetrain.setThrottle(1); // sets drive motors to full speed
+            timer++; // increments timer by 1
+        }
+        // [/Infinite2]
     }
-    // [/Infinite2]
 }

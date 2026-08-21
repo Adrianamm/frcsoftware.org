@@ -81,6 +81,14 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                         //     label: 'Methods',
                         //     slug: 'learning-course/stage0/methods',
                         // },
+                        {
+                            label: 'Arrays and For-Each Loops',
+                            slug: 'learning-course/stage0/arrays',
+                        },
+                        {
+                            label: 'Interfaces, Generics, and Lists',
+                            slug: 'learning-course/stage0/interfaces-lists',
+                        },
                     ],
                 },
                 {
@@ -92,12 +100,20 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                             slug: 'learning-course/stage1/stage-overview',
                         },
                         {
-                            label: 'Stage 1A',
+                            label: 'Stage 1A: Kitbot Intro',
                             collapsed: true,
                             items: [
                                 {
                                     label: 'Stage 1A Introduction',
                                     slug: 'learning-course/stage1/stage1a/stage-overview',
+                                },
+                                {
+                                    label: 'Kitbot Drivetrain',
+                                    slug: 'learning-course/stage1/stage1a/kitbot-drivetrain',
+                                },
+                                {
+                                    label: 'Drivetrain Simulation',
+                                    slug: 'learning-course/stage1/stage1a/drivetrain-sim',
                                 },
                                 // {
                                 //     label: 'TBD',
