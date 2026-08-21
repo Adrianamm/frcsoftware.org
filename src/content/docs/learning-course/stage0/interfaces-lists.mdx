@@ -41,6 +41,11 @@ Here are two classes that each implement that contract, in their own way:
 
 ```
 
+Here we use the `implements` keyword to tell Java that `UltrasonicSensor` and `LidarSensor` implement `DistanceSensor`.
+If we said the `implements DistanceSensor` but didn't add a `getDistanceMeters()` method, the compiler would error.
+We also use the `@Override` annotation to tell the compiler we are **overriding** that `getDistanceMeters()` method.
+Overriding a method is a way to change the behavior of a method that's already defined in a parent class or interface.
+
 <Aside type="note">
     A real sensor's `getDistanceMeters()` would read a value from hardware.
     These simplified versions just return a fixed number, so we can focus on the
@@ -49,11 +54,16 @@ Here are two classes that each implement that contract, in their own way:
 
 Because both classes implement `DistanceSensor`, code that only knows about `DistanceSensor` can work with either one:
 
-```java {usage}#useDistanceSensorCall
+```java {usage}#isTooClose
 
 ```
 
-Here, `isTooClose` is defined to take a `DistanceSensor`, so it doesn't matter whether we pass in an `UltrasonicSensor` or a `LidarSensor`.
+Here, `isTooClose` is defined to take a `DistanceSensor`, so it doesn't matter whether we pass in an `UltrasonicSensor` or a `LidarSensor`:
+
+```java {usage}#distanceSensorCall
+
+```
+
 If your team switches sensors next season, this method doesn't need to change at all.
 
 ## A Generic Method
@@ -93,17 +103,17 @@ To use a class from a package, you need an `import` statement at the top of the 
 
 ```
 
-This imports `ArrayList` and `List` from the `java.util` package, which we'll use next.
+This imports `ArrayList<T>` and `List<T>` from the `java.util` package, which we'll use next.
 Later in the course, you'll import classes the same way from WPILib packages, such as `org.wpilib.math.geometry.Translation2d`.
 
-## The `List` Interface and `ArrayList`
+## The `List<` Interface and `ArrayList`
 
 In the [previous lesson](/learning-course/stage0/arrays/), we used arrays to store multiple values together.
 An array's size is fixed once it's created, which works well when you know exactly how many elements you'll need, like a fixed autonomous path.
 But sometimes you don't know the size ahead of time, for example, if you want to record the robot's position every time it moves, for as long as the match lasts.
 
-`List` is an interface, like `DistanceSensor`, that describes a collection that can grow and shrink.
-`ArrayList` is a class that implements `List`:
+`List<T>` is an interface, like `DistanceSensor`, that describes a collection that can grow and shrink.
+`ArrayList<T>` is a class that implements `List<T>`:
 
 ```java {usage}#historyList
 
