@@ -54,7 +54,7 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                     collapsed: true,
                     items: [
                         {
-                            label: 'Stage 0 Introduction',
+                            label: 'Stage 0 Overview',
                             slug: 'learning-course/stage0/stage-overview',
                         },
                         {
@@ -88,7 +88,7 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                     collapsed: true,
                     items: [
                         {
-                            label: 'Stage 1 Introduction',
+                            label: 'Stage 1 Overview',
                             slug: 'learning-course/stage1/stage-overview',
                         },
                         {
@@ -96,7 +96,7 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                             collapsed: true,
                             items: [
                                 {
-                                    label: 'Stage 1A Introduction',
+                                    label: 'Stage 1A Overview',
                                     slug: 'learning-course/stage1/stage1a/stage-overview',
                                 },
                                 {
@@ -122,7 +122,7 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                             collapsed: true,
                             items: [
                                 {
-                                    label: 'Stage 1B Introduction',
+                                    label: 'Stage 1B Overview',
                                     slug: 'learning-course/stage1/stage1b/stage-overview',
                                 },
                                 {
