@@ -1,0 +1,82 @@
+---
+title: Debugging
+description: An Intro to Debugging
+prev: learning-course/stage0/conditionals
+next: false
+codeRegionSources:
+    default: stage0/snippets/src/Debugging.java
+---
+
+Every programmer's end goal is to write code that does what they set out to do.
+But almost inevitably we will mess up some part of the code at some point.
+Debugging is the process of finding problems in code we have already written and fixing them.
+
+# interpreting a stacktrace
+
+when the error happens it'll yell at You
+this tells you lots of useful info or whatever
+
+# types of errors
+
+there's a few different types of ways your code can be messed up.
+let's take a look.
+
+summary table:
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Timing</th>
+            <th>Symptoms</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Syntax Error</td>
+            <td>Compile time</td>
+            <td>The compiler will display an error message</td>
+        </tr>
+        <tr>
+            <td>Runtime Error</td>
+            <td>Run time</td>
+            <td>The program will display an error message</td>
+        </tr>
+        <tr>
+            <td>Logic Error</td>
+            <td>Run time</td>
+            <td>The code will run but not function as intended</td>
+        </tr>
+    </tbody>
+</table>
+
+## syntax errors
+
+before the program runs, there's a program called a `compiler` that takes all the code you wrote and turns it into instructions a machine will understand.
+if the compiler doesn't understand what some part of the code means, it will throw an error.
+this is a **syntax error** because these errors occur
+when you mess up the syntax of a language (the way it is written).
+we say this error happens at `compile time` because
+it happens when the compiler is translating the code, before it ever actually runs.
+for instance, the following code would generate a syntax error:
+
+```java #syntaxError
+
+```
+
+or this code!
+
+```java #syntaxError2
+
+```
+
+## where to look for bugs
+
+## using external resources
+
+## initial ideas
+
+- debug by behavior
+- debug through logging
+- debug through code trace
+- types of errors
