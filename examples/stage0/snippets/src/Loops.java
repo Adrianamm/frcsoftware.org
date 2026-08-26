@@ -29,10 +29,15 @@ void main() {
     }
 
     // [whileExample2]
-    int autoTimer = 0;
-    while (autoTimer <= 15){
-        System.out.println("AutoMode is happening");
-        autoTimer++;
+    int timer = 0;
+
+    while (timer <= 5) {
+      if (timer < 5) {
+        System.out.println("Drive Forward");
+      } else {
+        System.out.println("Stop Driving");
+      }
+      timer++;
     }
     // [/whileExample2]
 

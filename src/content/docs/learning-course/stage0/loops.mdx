@@ -7,7 +7,7 @@ codeRegionSources:
     default: stage0/snippets/src/Loops.java
 ---
 
-Oftentimes we want to do the same action multiple times in a row.
+Oftentimes in code, there is a need to repeat the same action multiple times in a row.
 For instance, if you know your grades are about to be released, you might repeatedly check them until they come out.
 In Java we can use loops to do this.
 
@@ -21,15 +21,12 @@ In this lesson, we're going to cover two main types of loops: **while** loops an
 </Aside>
 
 Conditionals and loops may seem similar but they have different purposes.
-Conditionals are used to make decisions based on whether the condition is true or false.
-Loops are used to repeat code until the condition is met.
-This can be thought of conditionals make decisions, and loops are for repeating.
+Conditionals and loops both control the flow of programs.
+Conditionals are used to run a block of code once, whereas a loop can run a block of multiple times
 
 ## while
 
 `while` loops are the most simple type of loops.
-If you have used block coding before, this is similar to the repeat block.
-If you have taken an CS class, you might already be familiar with a `while` loop.
 
 The syntax of a `while` loops is as shown:
 
@@ -38,7 +35,6 @@ The syntax of a `while` loops is as shown:
 ```
 
 You might notice that a `while` loop looks very similar to the `if` conditional, which was discussed in the previous lesson.
-This is because the `while` loop and `if` statement are both based around checking a condition, and then performing an action depending on whether the condition is true or false.
 A `while` loop includes:
 
 - the `while` keyword to declare that we're making a `while` loop
@@ -47,7 +43,7 @@ A `while` loop includes:
 - `{` to denote the opening of the loop's code block
 - `}` to denote the end of the loop's code block
 
-The following flowchart `demonstrates` how a while loop works:
+The following flowchart demonstrates how a while loop works:
 
 <ContentFigure
     src="/learning-course/stage0/loops/WhileLoop.webp"
@@ -91,11 +87,20 @@ In the example below we have:
 
 Without running the code, what do you think happens?
 
-`autoTimer` is set to 0. The `while` loop's condition is `autoTimer <= 15`.
-0 is less than 15 so the code enters the `while` code block, and prints outs `Auto is happening`.
-`autoTimer++` is run which increases `autoTimer`'s value by one.
-The code goes back to the condition, 1 is less than 15, so the code enters the `while` code block again, printing out `Auto is happening`.
-Like before, `autoTimer++` runs which increases `autoTimer` by one again making the value be 2. This repeats until `autoTimer` is 16. When that happens the condition is false and the `while` loop is skipped.
+`timer` is set to 0, and the `while` loop’s condition is checking if `timer` is less than or equal to 5.
+0 is less than 5, so the code enters the while loop.
+Now the `if` statement checks whether `timer` is less than 5.
+0 is less than 5, so it prints out `Drive Forward`.
+The `if` statement is done, and the code runs `timer++`, which increases `timer`’s value by one.
+
+The code goes back to the `while` loop.
+1 is less than 5, so the code enters the `while` loop again.
+For the `if` statement, 1 is less than 5.
+Therefore, `Drive Forward` gets printed out again.
+
+This repeats 4 times until `timer` is 5.
+Once this happens, the `if` statement is skipped since 5 is not less than 5.
+Now the else runs and prints out `Stop Driving`, `timer`’s value increases to 6, 6 is not less than 5, so the code stops running.
 
 ## for
 
@@ -130,6 +135,9 @@ The three statements are
 - **update**: updates the variable created in initialization after each iteration.
   Lastly, that's `i++`;
 
+All 3 statements are optional, but the semicolons must be present.
+However, the examples in this section will use all statements.
+
 Let's look at another example:
 
 ```java #forExample
@@ -145,6 +153,9 @@ When `i` is no longer less than 5, the `for` loop is skipped.
 
 It is important to make sure that the condition can become false.
 If the condition is always true, the loop will always run causing an infinite loop.
+When an infinite loop happens, the code never stops.
+This can be unsafe if the code is running a robot mechanism.
+This could cause a robot to never stop driving forward or an arm to always move.
 Infinite loops can be prevented by ensuring that the value inside the condition changes by incrementing or decrementing.
 
 <Aside type="note">
