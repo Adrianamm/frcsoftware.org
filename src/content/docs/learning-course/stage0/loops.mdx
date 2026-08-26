@@ -165,8 +165,15 @@ This will be talked about more in Stage 1
 
 </Aside>
 
-```java #Infinite1
+{/* rli:ignore */}
 
+```java
+    int timer = 0;
+    if (false) {
+        while (timer < 7){
+            drivetrain.setThrottle(1); // sets drive motors to full speed
+        }
+    }
 ```
 
 In this example, we want our drive train to run for 7 seconds.
@@ -177,8 +184,14 @@ This means `timer` will always be 0. 0 is less than 7 so the loop will continuou
 
 To fix this, we would make sure to increment the timer value as shown below.
 
-```java #Infinite2
+{/* rli:ignore */}
 
+```java
+    int timer = 0;
+    while (timer < 7){
+        drivetrain.setThrottle(1); // sets drive motors to full speed
+        timer++; // increments timer by 1
+    }
 ```
 
 `timer` now increments by 1 each time the loop is run, and the robot will stop driving after 7 seconds.

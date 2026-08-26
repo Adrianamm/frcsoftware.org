@@ -58,27 +58,13 @@ void main() {
     }
     //[/ForExample2]
 
-    //
     // [forExample]
     for (int i = 0; i < 5; i++){
         System.out.println(i); // prints 0, 1, 2, 3, 4
     }
     // [/forExample]
 
-    if (false) {
-        // [Infinite1]
-        int timer = 0;
-        while (timer < 7){
-            drivetrain.setThrottle(1); // sets drive motors to full speed
-        }
-        // [/Infinite1]
-    }
 
-    // [Infinite2]
-    int timer = 0;
-    while (timer < 7){
-        drivetrain.setThrottle(1); // sets drive motors to full speed 
-        timer++; // increments timer by 1
-    }
-    // [/Infinite2]
+
+
 }
