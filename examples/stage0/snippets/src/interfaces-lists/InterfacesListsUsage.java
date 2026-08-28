@@ -22,12 +22,12 @@ boolean isTooClose(DistanceSensor sensor) {
 // [/genericLast]
 
 void main() {
-    // [useDistanceSensorCall]
+    // [distanceSensorCall]
     DistanceSensor ultrasonic = new UltrasonicSensor();
     DistanceSensor lidar = new LidarSensor();
     System.out.println(isTooClose(ultrasonic)); // false
     System.out.println(isTooClose(lidar));      // false
-    // [/useDistanceSensorCall]
+    // [/distanceSensorCall]
 
     // [genericLastCall]
     Point[] path = {new Point(0, 0), new Point(1, 2), new Point(3, 3)};
@@ -36,6 +36,13 @@ void main() {
     System.out.println(last(path).getX());       // 3.0
     System.out.println(last(sensors).getClass()); // class LidarSensor
     // [/genericLastCall]
+
+    // [pairCall]
+    Pair<String, Integer> pair = new Pair<>("foo", 42);
+    String foo = pair.getFirst();
+    Pair<Point, Point> pointPair = new Pair<>(new Point(0, 0), new Point(1, 2));
+    Point secondPoint = pointPair.getSecond();
+    // [/pairCall]
 
     // [historyList]
     List<Point> waypoints = new ArrayList<>();

@@ -10,7 +10,6 @@ class Drivetrain {
 
 boolean condition = false;
 Drivetrain drivetrain = new Drivetrain();
-Drivetrain drivetrain = new Drivetrain();
 
 void main() {
     // [whileSyntax]
