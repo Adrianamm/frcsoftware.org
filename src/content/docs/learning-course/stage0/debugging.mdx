@@ -9,19 +9,33 @@ codeRegionSources:
 
 Every programmer's end goal is to write code that does what they set out to do.
 But almost inevitably we will mess up some part of the code at some point.
-Debugging is the process of finding problems in code we have already written and fixing them.
+Debugging is the process of finding those problems, often called bugs, in our code and fixing them.
+This section will go over how to figure out what the problems are and how to solve it.
 
-# interpreting a stacktrace
+<Aside type="note" title="Did you know?">
+    Using the word "bug" to refer to a an error in code was popularized by Grace
+    Hopper, American computer scientist, found a moth in a computer. While she
+    was working on the Mark II, her team was able to trace the Mark II's error
+    to a real month that got stuck in the computer.
+</Aside>
 
-when the error happens it'll yell at You
-this tells you lots of useful info or whatever
+# Interpreting a Stacktrace
 
-# types of errors
+When an error happens, the IDE (ex: VS Code) will tell you.
+There are two places were the IDE can happen.
+One is in the code itself and another is in the terminal.
 
-there's a few different types of ways your code can be messed up.
-let's take a look.
+When the code is ran and there is an error, a message will appear in the terminal.
+This message is called a **stacktrace**.
+A stacktrace traces or identifies, the spot in the program where the error happened.
+The stacktrace tells you a lot of useful information about the type of error and how you can fix it.
 
-summary table:
+# Types of Errors
+
+There's a few different types of errors that you can run into when writing code.
+Let's take a look!
+
+Summary Table:
 
 <table>
     <thead>
@@ -50,12 +64,27 @@ summary table:
     </tbody>
 </table>
 
-## syntax errors
+## Syntax Error
 
-before the program runs, there's a program called a `compiler` that takes all the code you wrote and turns it into instructions a machine will understand.
-if the compiler doesn't understand what some part of the code means, it will throw an error.
-this is a **syntax error** because these errors occur
-when you mess up the syntax of a language (the way it is written).
+"If you make an error with your syntax, the compiler will give you an error.
+VSCode shows these errors by putting a red line under the part of the code that it thinks is wrong,
+just like a typo in Google Docs."
+
+"Sometimes, errors are too subtle for the compiler to notice immediately, and it blames the wrong part of the code
+with a confusing error message.
+For example, if you accidentally delete a bracket, you might see errors appear much
+later in the file or even at the very end.
+with picture
+
+When an error pops up, it's probably because of the code you
+just changed.
+Look closely at it and try to find what went wrong.
+You might need to undo the change with Ctrl+Z to get
+your code back to a working state."
+
+Before the program runs, there's a program called a `compiler` that takes all the code you wrote and turns it into instructions a machine will understand.
+If the compiler doesn't understand what some part of the code means, it will throw an error.
+This error is called a **syntax error** because these errors occur when you mess up the syntax of a language.
 we say this error happens at `compile time` because
 it happens when the compiler is translating the code, before it ever actually runs.
 for instance, the following code would generate a syntax error:
@@ -70,7 +99,76 @@ or this code!
 
 ```
 
-## where to look for bugs
+## Runtime Error
+
+## Logic Error
+
+There will be times when the code runs, has no errors but it doesn't give the desired output.
+Typically, this does not mean that your syntax was wrong.
+Most of the time, the instructions or the logic in your code isn't correct.
+This means that the code could have wrong conditions, formulas, or operators.
+
+Computers don't know what we are expecting them to do.
+They only know what we told them.
+If the instructions given, don't match up the then
+
+<Aside type="note">
+    This section includes code that you might not have seen before. Don't worry!
+    There are comments `// which look like this` which are notes. They explain
+    what the code does.
+</Aside>
+
+Let's look at simple example
+
+```java #logicError1
+
+```
+
+This example finds the area of a rectangle.
+The width is 2 and the height is 5.
+If this code was to be ran, it would print out `Area of the rectangle is 7`, but that isn't right.
+The area should be 10.
+The code runs with no errors, so why it the code doing the math wrong?
+When trying to find the area of a rectangle, the equation for the area is width times height.
+In the code, it isn't multiplying the width and height, it adds the two.
+Therefore, changing the addition sign to a multiplication sign will fix the issue and it should print out `Area of the rectangle is 10`.
+This is a simple example of a logic issue.
+The code ran with no errors, it was given the wrong operator.
+
+Now let's look at a slightly more complex example.
+Think about an alarm clocks, they make noises when the set time happens.
+If we are writing a program that describes how alarm clocks work, it might look like the following:
+
+```java #logicError2
+
+```
+
+When looking at the code, it seems correct.
+If the code was ran, there would be no errors.
+However, when the alarmTime is false, it makes the alarm beep.
+An alarm that beeps all the time would be really annoying.
+
+We know that alarm clocks work as follows:
+
+- When the current time matches the time you want to wake up, it beeps.
+- When the current time does NOT match the time you want to wake up, nothing happens.
+
+Let's break down what the code is doing:
+
+- If the alarmTime is equal to 600, makeNoise is false.
+  Therefore, nothing happens
+- If the alarmTime is anything but 600, makeNoise is false.
+  Therefore, nothing happens and the alarm doesn't go off.
+
+This doesn't match how alarms are supposed to work.
+When the alarmTime is 600 and it's time to wake up, the alarm should beep.
+We can fix this by changing `makeNoise = false` to `makeNoise = true`.
+
+Some ways to help solve logic errors are to take the time to read through your code.
+You can also put print statements
+
+Finding logical errors in code means taking the time to read through your code and make sure what it does matches up with what you want your code to do.
+Adding `System.out.println();` can also help figure out
 
 ## using external resources
 
