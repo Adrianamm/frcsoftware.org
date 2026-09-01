@@ -5,7 +5,7 @@ template: splash
 prev: false
 next: false
 hero:
-    tagline: The comprehensive learning guide and technical reference for FRC programming
+    tagline: The comprehensive learning guide for FRC programming
     image:
         html: '<img src="/favicon.svg" alt="FRCSoftware.org logo" />'
     actions:
@@ -16,12 +16,7 @@ hero:
 import HomeCard from '../../components/HomeCard.astro';
 
 <div class="home-cards-grid">
-    <HomeCard
-        title="Getting Started"
-        href="/learning-course/"
-        icon="check"
-        description="Everything you need to know to get started coding."
-    />
+
     <HomeCard
         title="Educator's Guide"
         href="/educators-guide/introduction"
@@ -34,4 +29,5 @@ import HomeCard from '../../components/HomeCard.astro';
         href="/contribution/"
         title="Contribution"
     />
+
 </div>
