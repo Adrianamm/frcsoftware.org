@@ -8,8 +8,8 @@ codeRegionSources:
 ---
 
 In everyday life, we make decisions based on different situations.
-For example, "If we are hungry, then we get a snack" or "If we are tired, we go to bed."
-Robots often need to make different decisions based on different situations.
+For example, "If we are hungry, then we get a snack" or "If we are tired, then we go to bed."
+Robots often need to make different decisions depending on the situation.
 For example, "If the timer starts, drive the robot for 5 seconds" or "If the timer is 0, stop driving."
 To add decisions to our code, we use conditionals.
 
@@ -57,7 +57,7 @@ If `condition` is true, the code inside the `if` block will run.
 If `condition` is false, the code inside the `if` block will be skipped.
 
 Now let's look at an example.
-In this example, this code will move forward only when distance is smaller then 10.
+In this example, this code will only tell the drivetrain to move forward when distance is smaller then 10.
 
 ```java #ifExample
 
@@ -84,7 +84,7 @@ The syntax for an else statement is as follows:
 Here's how this works: if the`if` statement's condition is `true`, then the code inside will run.
 If the `if` statement's condition is `false`, the `if` block will be skipped, and the code inside the `else` block will run.
 
-In this example, we now have an `else` statement that sets the motor speed to 0 if `distance` is greater than 20.
+In this example, we now have an `else` statement that sets the motor speed to 0 if `distance` is not less than 10.
 Since our `distance` is set to 21, what would the code print out?
 
 ```java #elseExample
@@ -98,7 +98,7 @@ The `else` runs and it prints out "Motors are not spinning", and the motors are 
 ## else if
 
 `if` and `else` lets you choose between two options, but what if you wanted to choose between even more options?
-An `else if` statement let you choose between as many conditions as you like.
+`else if` statements let you choose between as many conditions as you like.
 
 The syntax for an `else if` statement goes as follows:
 
