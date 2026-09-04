@@ -63,7 +63,6 @@ Let's take a look!
 ## Syntax Error
 
 Before the program runs, there's a program called a compiler that takes all the code you wrote and turns it into instructions a machine will understand.
-If the compiler doesn't understand what some part of the code means, it will throw an error.
 When there is an error with the syntax, the compiler will show an error.
 VS Code shows these errors by putting a red line under the part of code that it thinks is wrong,
 just like a typo in Google Docs.
@@ -123,8 +122,10 @@ Runtime errors are errors that can only be found when the program is running.
 One common types of runtime error is dividing by zero.
 
 Let's look at an example.
-int answer = 10 / 0;
-System.out.println(answer);
+
+```java #runtime
+
+```
 
 The example looks like it should run.
 However, if the code was to run, it would give a runtime error for Diving by zero.
@@ -132,6 +133,14 @@ The compiler would give an error similar to `Exception in thread "main" java.lan
 By reading the error message, it's clear that the error is a divide by 0 error.
 This happens in `int answer = 10/0;` because it's diving by zero.
 One way to fix this error would be to swap the 10 and 0.
+
+<Aside type="Tip">
+    Runtime errors will tell you what line the error is on.
+    For example, `Exception in thread "main" java.lang.ArithmeticException: / by zero at main.main(main.java:5)`
+    has `(main.java:5)`.
+    That means the error is on line 5.
+
+</Aside>
 
 ## Logic Error
 
@@ -161,10 +170,7 @@ Therefore, changing the addition sign to a multiplication sign will fix the issu
 This is a simple example of a logic issue.
 The code ran with no errors but, it was given the wrong operator.
 
-Some ways to help solve logic errors are to take the time to read through your code.
-You can also put print statements
-
-Finding logical errors in code means taking the time to read through your code and make sure what it does matches up with what you want your code to do.
+Finding logical errors in code can mean taking time to read through your code and make sure what it does matches up with what you want your code to do.
 Adding `System.out.println();` can also help break down what the code is doing at different spots in the program.
 
 ## Helpful Tips
