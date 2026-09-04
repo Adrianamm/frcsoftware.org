@@ -127,12 +127,11 @@ int answer = 10 / 0;
 System.out.println(answer);
 
 The example looks like it should run.
-Even though there are no errors so it appears that everything should run fine.
 However, if the code was to run, it would give a runtime error for Diving by zero.
 The compiler would give an error similar to `Exception in thread "main" java.lang.ArithmeticException: / by zero at main.main(main.java:5)`
 By reading the error message, it's clear that the error is a divide by 0 error.
 This happens in `int answer = 10/0;` because it's diving by zero.
-The way to fix this error would be to swap the 10 and 0.
+One way to fix this error would be to swap the 10 and 0.
 
 ## Logic Error
 
@@ -160,7 +159,7 @@ When trying to find the area of a rectangle, the equation for the area is width 
 In the code, it isn't multiplying the width and height, it adds the two.
 Therefore, changing the addition sign to a multiplication sign will fix the issue and it should print out `Area of the rectangle is 10`.
 This is a simple example of a logic issue.
-The code ran with no errors, it was given the wrong operator.
+The code ran with no errors but, it was given the wrong operator.
 
 Some ways to help solve logic errors are to take the time to read through your code.
 You can also put print statements
@@ -181,4 +180,4 @@ When there is an error, read through the error message carefully.
 If you're stuck, use online resources!
 Looking up an error can help point you to the right direction on how to fix it.
 
-- For some, changing VS Code to be in a more accessible font (e.i Comic Sans) can be helpful in reading code to find or avoid errors.
+- For some, changing VS Code to be in a more accessible font (i.e Comic Sans) can be helpful in reading code to find or avoid errors.
