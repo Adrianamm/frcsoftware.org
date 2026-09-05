@@ -122,9 +122,11 @@ Runtime errors are errors that can only be found when the program is running.
 One common types of runtime error is dividing by zero.
 
 Let's look at an example.
+{/* rli:ignore */}
 
-```java #runtime
-
+```java
+    int answer = 10 / 0;
+    System.out.println(answer);
 ```
 
 The example looks like it should run.

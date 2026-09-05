@@ -13,9 +13,6 @@ void main() {
     System.out.println("Area of the rectangle is " + area);
     //[/logicError1]
     
-    //[runtime]
-    int answer = 10 / 0;
-    System.out.println(answer);
-    //[/runtime]
+
 
 }
