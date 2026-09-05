@@ -50,12 +50,12 @@ void main() {
     // [math1]
     int e = 0;
     int f = 2;
-    System.out.println(e = f + 10);
+    System.out.println(e = f + 10); // prints 12
     // [/math1]
 
     // [math2]
     int magicNumber = 6;
-    System.out.println(magicNumber * 2);
+    System.out.println(magicNumber * 2); // prints 12
     // [/math2]
 
 }

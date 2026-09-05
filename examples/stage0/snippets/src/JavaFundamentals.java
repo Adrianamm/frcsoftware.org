@@ -9,7 +9,7 @@ int matchTime = 0;
 int CLIMBER_ID = 51; // an integer named CLIMBER_ID that holds the value 51
 double UP_POSITION = 33.5; // a double named UP_POSITION that holds the value 33.5
 boolean isFinished = false; // a boolean named isFinished that holds the value false
-String autoName = "Side Auto"; // a String named "autoName" that holds the value "Side Auto"
+String autoName = "Side Auto"; // a String named autoName that holds the value "Side Auto"
 // [/variables]
 
 void main() {
