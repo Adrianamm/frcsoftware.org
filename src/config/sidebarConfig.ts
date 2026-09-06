@@ -175,6 +175,16 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                                 },
                             ],
                         },
+                        {
+                            label: 'Stage 1C: Control and Telemetry',
+                            collapsed: true,
+                            items: [
+                                {
+                                    label: 'Stage 1C Introduction',
+                                    slug: 'learning-course/stage1/stage1c/stage-overview',
+                                },
+                            ],
+                        },
                     ],
                 },
                 {
