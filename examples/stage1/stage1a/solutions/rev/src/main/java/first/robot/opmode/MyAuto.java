@@ -22,7 +22,8 @@ public class MyAuto extends PeriodicOpMode {
 
   @Override
   public void start() {
-    autoTimer.restart();
+    /* Called once when the robot is enabled. */
+    autoTimer.restart(); // Reset the timer to zero at the start of auto
   }
 
   // [SimpleAutoStart]
@@ -34,7 +35,7 @@ public class MyAuto extends PeriodicOpMode {
    */
   @Override
   public void periodic() {
-    if (autoTimer.hasElapsed(4)) {
+    if (autoTimer.hasElapsed(4)) { // Drive for 4 seconds after the start of auto
       robot.drivetrain.arcadeDrive(0.0, 0.0); // Stop the robot after 4 seconds
       // [/SimpleAutoStart]
       // [SimpleAutoEnd]

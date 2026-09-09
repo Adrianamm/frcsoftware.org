@@ -2,7 +2,7 @@
 title: Spot the Error, Part 2
 description: A review exercise for stage 1B
 prev: learning-course/stage1/stage1b/command-based-kitbot-pt2
-next: false
+next: learning-course/stage1/stage1c/stage-overview
 codeRegionSources:
     default: stage1/stage1b/snippets/src/main/java/sources/SpotTheErrorPt2.java
 ---
@@ -44,28 +44,6 @@ Can you spot the error?
     Read the values from the suppliers inside the loop instead:
 
     ```java #arcadeDriveFix
-
-    ```
-
-</details>
-
-### Exercise 3
-
-This command is supposed to rotate the robot 90 degrees clockwise from its starting position.
-
-```java #rotateInPlaceBug
-
-```
-
-Can you spot the error?
-
-<details class="accordion">
-    <summary>Reveal</summary>
-    The target angle is read once, before the command starts running.
-    If the robot's heading changes before the command runs, it will rotate to the wrong angle.
-    Read the target angle from the IMU when the command starts running instead:
-
-    ```java #rotateInPlaceFix
 
     ```
 
