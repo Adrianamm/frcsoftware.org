@@ -22,6 +22,20 @@ void main() {
     System.out.println(num); // prints out the value 4
     // [/printVariable]
 
+    // [stringConcatenation1]
+    double speed = 1;
+    System.out.println("Left Motor Speed " + speed);
+    //[/stringConcatenation1]
+    
+    // [stringConcatenation2]
+    int first = 6;
+    double second = 2.0;
+
+    System.out.println(first + " " + second); 
+
+    //[/stringConcatenation2]
+
+
     // [singleLineComment]
     // This prints Hello World
     System.out.println("Hello World");

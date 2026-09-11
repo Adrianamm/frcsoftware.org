@@ -171,6 +171,31 @@ However, if we are printing out the value of a variable, then we do not need quo
 
 ```
 
+Often when programming, there will be a lot of print statements that display different information.
+To make it clear what's being printed, a `String` can be added in front of the value and then the `+` sign.
+This method of combining strings via the `+` operator is known as string concatenation.
+Let's look at an example:
+
+```java #stringConcatenation1
+
+```
+
+`speed` is set equal to 1, this will print out `Left Motor Speed 1`.
+Notice the space between `Speed` and the `"`.
+This is done to make the print out easy to read.
+`System.out.println("Left Motor Speed" + speed);` would print out `Left Motor Speed1` which isn't easy to read.
+
+This can also be done using many variables.
+Using an empty string, `" "`, a space can be added in between variables in a print statement.
+Let's look at another example:
+
+```java #stringConcatenation2
+
+```
+
+This example will print out `6 2.0`.
+Java recognizes that one of the items being added is a string, and converts the items on either side to a string before combining everything.
+
 ## Comments
 
 When programming, we use comments to write notes that explain what the code does.
