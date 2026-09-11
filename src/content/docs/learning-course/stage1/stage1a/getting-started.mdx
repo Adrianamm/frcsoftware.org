@@ -8,20 +8,18 @@ next: kitbot-drivetrain
 import { FileTree } from '@astrojs/starlight/components';
 
 Before we can start programming, we have to fork and clone the relevant repository.
-
-- If your team primarily uses REV electronics (such as SPARK MAX motor controllers), clone [the REV template](https://github.com/frcsoftware/Stage1-Template-REV).
-- If your team primarily uses CTRE electronics (such as Kraken motors), clone [the CTRE template](https://github.com/frcsoftware/Stage1-Template-CTRE).
+If you are not sure which set up your team uses, ask a team member!
 
 export const codeRepo = [
     {
-        title: 'REV Electronics',
+        buttonTitle: 'REV Template',
         image: '/learning-course/stage1/stage1a/rev.webp',
         imageAlt:
             'A photo of a SPARKMax in front of a NEO Motor. Photo Credit: REV',
         code: 'https://github.com/frcsoftware/Stage1-Template-REV',
     },
     {
-        title: 'CTRE Electronics',
+        buttonTitle: 'CTRE Template',
         image: '/learning-course/stage1/stage1a/ctre.webp',
         imageAlt: 'A photo of a kraken motor. Photo Credit: CTRE',
         code: 'https://github.com/frcsoftware/Stage1-Template-CTRE',
@@ -43,7 +41,7 @@ export const codeRepo = [
           <h3>{example.title}</h3>
         </div>
         <div class="featured-links">
-          <a href={example.code} target="_blank">Template</a>
+        <a href={example.code} target="_blank"> {example.buttonTitle}</a>
         </div>
       </article>
     ))}
