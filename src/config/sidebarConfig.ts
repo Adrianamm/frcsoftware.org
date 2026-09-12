@@ -90,6 +90,10 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                             slug: 'learning-course/stage0/interfaces-lists',
                         },
                         {
+                            label: 'Additional Resources',
+                            slug: 'learning-course/stage0/additional-resources',
+                        },
+                        {
                             label: 'Stage 0 Wrap-Up',
                             slug: 'learning-course/stage0/stage-wrap-up',
                         },
