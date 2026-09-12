@@ -23,8 +23,14 @@ export const kitbots = [
         code: 'https://github.com/frcsoftware/Kitbot-Examples/tree/main/2026',
     },
 ];
-//https://github.com/LynkRobotics/RobotCode2026Public
+//
 export const examples = [
+    {
+        title: "9496's 2026 Code",
+        image: '/examples/9496-2026-robot.webp',
+        imageAlt: 'Photo of 9496 2026 robot',
+        repo: 'https://github.com/LynkRobotics/RobotCode2026Public',
+    },
     {
         title: "1678's 2026 Code",
         image: '/examples/1678-2026-robot.webp',
@@ -105,7 +111,9 @@ export const examples = [
         </div>
         <div class="featured-links">
           <a href={example.repo} target="_blank">Repo</a>
-          <a href={example.chiefdelphi} target="_blank">Chief Delphi</a>
+          {example.chiefdelphi && (
+            <a href={example.chiefdelphi} target="_blank">Chief Delphi</a>
+          )}
         </div>
       </article>
     ))}
