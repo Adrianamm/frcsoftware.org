@@ -20,6 +20,7 @@ import org.wpilib.framework.OpModeRobot;
  * project.
  */
 public class Robot extends OpModeRobot {
+
   public final Drivetrain drivetrain = new Drivetrain();
   public final IntakeLauncher intakeLauncher = new IntakeLauncher();
   public final Feeder feeder = new Feeder();

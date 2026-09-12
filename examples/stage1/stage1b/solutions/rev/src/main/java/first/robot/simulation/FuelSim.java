@@ -15,6 +15,7 @@ import org.wpilib.math.geometry.Transform3d;
 import org.wpilib.networktables.NetworkTable;
 import org.wpilib.networktables.NetworkTableInstance;
 import org.wpilib.networktables.StructArrayPublisher;
+import org.wpilib.telemetry.Telemetry;
 
 public class FuelSim {
   private enum Mode {
@@ -85,6 +86,7 @@ public class FuelSim {
     double intakeLauncherVolts = intakeLauncherVoltsSupplier.getAsDouble();
     double feederVolts = feederVoltsSupplier.getAsDouble();
     isPaused = false;
+    if (mode != null) Telemetry.log("mode", mode);
     if (intakeLauncherVolts > 0 && feederVolts > 0) {
       mode = Mode.SHOOT;
     } else if (intakeLauncherVolts < 0 && feederVolts > 0) {
