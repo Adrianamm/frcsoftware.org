@@ -112,6 +112,10 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                                     slug: 'learning-course/stage1/stage1a/stage-overview',
                                 },
                                 {
+                                    label: 'Getting Started',
+                                    slug: 'learning-course/stage1/stage1a/getting-started',
+                                },
+                                {
                                     label: 'Kitbot Drivetrain',
                                     slug: 'learning-course/stage1/stage1a/kitbot-drivetrain',
                                 },
@@ -278,10 +282,6 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                 { label: 'Documentation', slug: 'resources/docs' },
                 { label: 'Hardware', slug: 'resources/hardware-intro' },
                 { label: 'Examples', slug: 'resources/examples' },
-                {
-                    label: 'Transitioning to Commands V3',
-                    slug: 'resources/transitioning-to-commands-v3',
-                },
             ],
         },
     ],
@@ -374,10 +374,6 @@ export const sidebarSections: Record<string, SidebarSection[]> = {
                     label: 'Documentation',
                     slug: 'resources/docs',
                 },
-                {
-                    label: 'Transitioning to Commands V3',
-                    slug: 'resources/transitioning-to-commands-v3',
-                },
             ],
         },
     ],
@@ -465,4 +461,23 @@ export function getPrevNextLinks(pathname: string): {
         prev,
         next,
     };
+}
+
+export function getSidebarLinkLabel(
+    pathname: string,
+    href: string,
+): string | null {
+    const sections = getSidebarForPath(pathname);
+
+    const allLinks: { label: string; href: string }[] = [];
+
+    for (const section of sections) {
+        allLinks.push(...flattenSidebarItems(section.items));
+    }
+
+    const normalizedHref = href.endsWith('/') ? href : href + '/';
+
+    const link = allLinks.find((link) => link.href === normalizedHref);
+
+    return link?.label ?? null;
 }
