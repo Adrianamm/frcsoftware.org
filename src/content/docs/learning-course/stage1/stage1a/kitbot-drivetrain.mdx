@@ -31,9 +31,10 @@ For this stage, the four drivetrain motors will be referred to as `leftLeader`, 
 
 Systemcore is the main processor for robot code.
 It can be thought of as the "brain" of the robot.
+Motor controllers connect to the Systemcore through the CAN ports.
 
 <ContentFigure
-    width="650px"
+    width="300px"
     alt="Drivetrain"
     src="/learning-course/stage1/stage1a/systemcore.webp"
 />
@@ -46,7 +47,39 @@ Vendors, such as REV or CTRE, provide classes that can be used to both control a
 While each individual type of motor controller has its own class, motor controllers from the same vendor are
 mostly interacted with in the same way so this stage will only use the `SparkMax` for REV code and the `TalonFX` for CTRE code.
 
-When creating a motor controller object, the physical motor controller's CAN ID and the CAN Bus ID are given.
+export const codeRepo = [
+    {
+        title: 'SparkMAX',
+        image: '/learning-course/stage1/stage1a/sparkmax.webp',
+        imageAlt: 'A photo of a SPARKMax. Photo Credit: REV',
+    },
+    {
+        title: 'TalonFX',
+        image: '/learning-course/stage1/stage1a/kraken.webp',
+        imageAlt: 'A photo of a kraken motor. Photo Credit: CTRE',
+    },
+];
+
+<section class="mechanism-section">
+  <div class="section-heading">  </div>
+
+  <div class="featured-grid">
+    {codeRepo.map((example) => (
+      <article class="featured-card">
+        {example.image && (
+          <div class="featured-image">
+            <img src={example.image} alt={example.imageAlt} loading="lazy" />
+          </div>
+        )}
+        <div class="featured-body">
+          <h3>{example.title}</h3>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
+
+When creating a motor controller object, the physical motor controller's CAN ID and the CAN Bus IDs are given to the program in the constructor.
 CAN Bus refers to which of the 5 Systemcore CAN ports, or which CANivore, the device is plugged into.
 CAN ID is an integer that each CAN device is configured to have.
 All devices on a given CAN Bus must have a unique ID.
@@ -160,11 +193,11 @@ This object stores the configuration so it can be changed and shared across diff
 
 </Tabs>
 
-Next, settings can be changed from their default by calling various functions on the configuration object with their new values.
+Next, the motor controller’s settings can be changed from their default by calling various functions on the configuration object with their new values.
 For the left motors, the invert setting will be `true` for REV code and `Clockwise_Positive` for CTRE code.
 This will cause the motors to spin in a direction that would drive the robot forward when a positive input is given.
-Since the motors on the right side of the drivetrain are facing the opposite direction they would cause the wheels try and drive the robot backwards when given a positive input if they were configured the same way.
-Instead they should be configured with an invert setting of `false` or `CounterClockwise_Positive` so they also drive the robot forward when given a positive input.
+Since the motors on the right side of the drivetrain are facing the opposite direction they would cause the wheels to try and drive the robot backwards when given a positive input if they were configured the same way.
+Therefore, the left motor needs to be configured with an invert setting of `false` or `CounterClockwise_Positive` so they also drive the robot forward when given a positive input.
 
 <Tabs syncKey={REV_CTRE_CHOOSER_KEY}>
     <TabItem label="CTRE">
@@ -241,7 +274,7 @@ While there are several ways to control a tank drive, this stage will be using a
 Arcade drive uses the y-axis of a joystick to control how fast the robot drives forward or backward while the x-axis controls how fast the robot rotates clockwise or counter clockwise.
 WPILib provides a class to convert joystick inputs into commands for the motors to follow called `DifferentialDrive`.
 
-An instance of `DifferentialDrive` should be created under where the motor controllers were declared.
+An instance of `DifferentialDrive` should be created under where the motor controllers were first declared.
 
 <Tabs syncKey={REV_CTRE_CHOOSER_KEY}>
     <TabItem label="CTRE">
@@ -339,12 +372,13 @@ By extending `PeriodicOpMode` these classes gain a few useful functions that are
 - `periodic()` is called repeatedly when the robot is enabled.
 - `end()` is called once when the robot transitions from enabled to disabled.
 - `disabledPeriodic()` is called repeatedly when the robot is disabled.
-  Further information about OpModes can be found in [this blog post](https://zharel.me/blog/opmodes/) if you would like to learn more.
+
+Further information about OpModes can be found in [this blog post](https://zharel.me/blog/opmodes/) if you would like to learn more.
 
 Two blank `PeriodicOpMode`s, `MyTeleop.java` and `MyAuto.java` are provided under the `opmode` folder.
 
 To control the robot with joysticks a Teleop OpMode needs to be created that periodically gives the `DifferentialDrive` instance new values from the controller.
-First an instance of `XboxController` needs to be created.
+In `MyTeleop.java`, an instance of XboxController needs to be created.
 This class has functions that provide the state of different buttons on the controller.
 Multiple controllers can be used at once so the Driver Station gives each a slot.
 The index provided in the constructor tells the `XboxController` which slot to listen to.
