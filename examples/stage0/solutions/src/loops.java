@@ -17,7 +17,7 @@ Drivetrain drivetrain = new Drivetrain();
 
 void main() {
   
-    // First, a new integer variable named `error`
+    // First, create a new integer variable named `error`
     // Below, create a while loop that compares if error is less than 5
     // if that is true, print "Robots should not quit", then increase `error` by one
     // if error is no longer less than 5, print "but yours did"
