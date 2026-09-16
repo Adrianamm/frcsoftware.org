@@ -6,7 +6,7 @@
 
 void main() {
     // Create an integer array named `driveMotors` that holds the values
-    // 1, 2, 3, 4 and print out `3`.
+    // 1, 2, 3, 4 and print out the third value in the array.
 
 
     // Create another integer array named `distance` that holds the values
