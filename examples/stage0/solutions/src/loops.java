@@ -10,7 +10,7 @@ class Drivetrain {
      * @param speed
      */
     public void setThrottle(double speed) {
-        System.out.println("Spinning drivetrain motors at speed: " + speed));
+        System.out.println("Spinning drivetrain motors at speed: " + speed);
     }
 }
 Drivetrain drivetrain = new Drivetrain();
