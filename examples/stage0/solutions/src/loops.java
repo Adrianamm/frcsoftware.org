@@ -32,10 +32,10 @@ void main() {
     // Create a for loop that has a new integer variable named `timer`
     // that is set to 15. Check for when timer is greater than or equal to 0,
     // then decrease timer by one. 
-    // Inside the for loop, include a print statement that prints "time left "
+    // Inside the for loop, include a print statement that prints "time left: "
     // and the variable `timer`
     for (int timer = 15; timer >= 0; timer--){
-        System.out.print("time left" + timer);
+        System.out.println("time left: " + timer);
     }
 
     // First, create a for loop that has a new integer variable named 
