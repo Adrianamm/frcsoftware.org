@@ -47,6 +47,20 @@ Vendors, such as REV or CTRE, provide classes that can be used to both control a
 While each individual type of motor controller has its own class, motor controllers from the same vendor are
 mostly interacted with in the same way so this stage will only use the `SparkMax` for REV code and the `TalonFX` for CTRE code.
 
+<Aside type="note">
+    The `TalonFX` and `SparkMax` classes, like many other classes that will be
+    used, come from external libraries provided by their respective vendors.
+    Therefore, these classes need to be imported into files where they are used
+    so the compiler knows what they are. If you use a class that has not yet
+    been imported VS Code will mark it as an error and provide a quick fix
+    button that allows you to quickly import the class. The import statement for
+    `TalonFX` and `SparkMax` look like `import
+    com.ctre.phoenix6.hardware.TalonFX;` and `import
+    com.revrobotics.spark.SparkMax;` respectively.
+</Aside>
+
+When creating a motor controller object, the physical motor controller's CAN ID and the CAN Bus ID are given.
+
 export const codeRepo = [
     {
         title: 'SparkMAX',
