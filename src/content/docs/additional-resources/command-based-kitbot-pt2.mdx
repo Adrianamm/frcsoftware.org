@@ -1,0 +1,210 @@
+---
+title: Exercise - Kitbot Rewrite, Pt. 2
+description: Rewriting the kitbot code in stage 1A to command-based
+codeRegionSources:
+    default: stage1/stage1b/snippets/src/main/java/sources/CommandBasedKitbotPt2.java
+---
+
+import Aside from '@components/Aside.astro';
+
+### What You'll Accomplish
+
+In this second part of the kitbot rewrite, you will:
+
+1. Create a `Drivetrain` subsystem class to allow for control of the drivetrain.
+2. Define an `arcadeDrive` subsystem that dynamically reads controller inputs using `DoubleSupplier`s.
+3. Bind the default drivetrain command in your teleop OpMode to enable driving.
+4. Define some basic autonomous modes.
+
+### Task 1: The Drivetrain Subsystem
+
+Create a new Java class named `Drivetrain.java` in the `mechanisms` package.
+This class should implement `Mechanism`.
+
+Then, do the following:
+
+1. Initialize four motors as private class fields: `leftLeader`, `leftFollower`, `rightLeader`, and `rightFollower`, which are on CANBus 0 and CAN IDs 0-3 respectively.
+2. Initialize a `DifferentialDrive` object named `differentialDrive` with the left and right leader motors.
+3. Initialize an `OnboardIMU` object named `imu`.
+4. Initialize a `DrivetrainSim` object named `drivetrainSim` and make a method named `periodic()` that runs the drivetrain sim `periodic()` method.
+
+<details class="accordion">
+    <summary>Hint</summary>
+    Refer back to Stage 1A for how to do these steps.
+</details>
+
+### Task 2: Controlling the Drivetrain
+
+Now that we have a `Drivetrain` class, we can create `Command`s that control the drivetrain.
+
+To do that, write the following:
+
+1. The drivetrain motor configuration code, which can be found in `Robot.java` from stage 1A.
+2. An `idle()` command that commands `0.0` speed and `0.0` rotation, and is set as the default command in the constructor.
+3. An `arcadeDrive(DoubleSupplier forwardThrottle, DoubleSupplier rotationThrottle)` command that continuously updates the drive motor speeds using the values from the suppliers.
+
+<details class="accordion">
+    <summary>Item 1, Hint 1</summary>
+    The constructor of the `Robot` class in stage 1A contains the code to
+    configure the drivetrain motors.
+</details>
+<details class="accordion">
+    <summary>Item 1, Hint 2</summary>
+    We want to configure our motors when a new `Drivetrain` instance is created.
+    What Java declaration defines the code that runs when a class is instantiated?
+</details>
+<details class="accordion">
+    <summary>Item 3 Hint</summary>
+    Since the joystick values change constantly, you must fetch the speed and
+    rotation from the suppliers inside the command's loop. You should have the
+    following inside of your command's body: 
+    ```java #arcadeDriveBody
+
+    ```
+
+</details>
+
+### Task 3: Using the Drivetrain
+
+Now that we have a `Drivetrain` class, we need to set it up to be used in our robot code.
+
+1. Create a `Drivetrain` instance in `Robot.java` named `drivetrain`.
+   It should be a public instead of private.
+2. Call `drivetrain.periodic();` in the `robotPeriodic` method.
+3. Then, open `MyTeleop.java` (your teleop OpMode).
+   In the constructor, set the drivetrain's default command to `arcadeDrive`.
+   Pass lambda expressions that read from your controller's joystick axes.
+
+<details class="accordion">
+    <summary>Hint 1</summary>
+    You can create an arcade drive command like so:
+    ```java #driveCommand
+    
+    ```
+    Can you figure out the expressions to replace `forwardThrottle` and `rotationThrottle` with?
+</details>
+<details class="accordion">
+    <summary>Hint 2</summary>
+    The expression for the `forwardThrottle` argument is `() -> -xbox.getLeftY()`, since we 
+    want to recompute the value of `-xbox.getLeftY()` while the `arcadeDrive` command is running. <br /> <br />
+    Can you figure out the expression for the `rotationThrottle` argument, considering
+    that the goal is to recompute the value of `xbox.getRightX()`?
+</details>
+
+<Aside type="note">
+    You might notice that we're calling `setDefaultCommand` twice - once in
+    `Drivetrain.java`, and once in `MyTeleop.java`. <br /> <br />
+    The `setDefaultCommand()` call in `MyTeleop.java` will only be active while
+    the MyTeleop opmode is selected. In all other circumstances, the default
+    command set in the constructor (`idle()`) will apply.
+</Aside>
+
+### Task 4: Create Auto Mode Files
+
+We need to create two new files to define our autonomous OpModes.
+
+Create 2 Java files in the `opmode` package, named `DriveStraight.java` and `DriveBackThenShoot.java`,
+before deleting the `MyAuto.java` file.
+Copy-paste the following code in each file,
+while replacing `MyOpModeName` with the correct name for each opmode:
+
+```java #opModeSkeleton
+
+```
+
+### Task 5: Drive Straight Autonomous
+
+This auto will drive the robot straight forwards for 4 seconds.
+
+In the `start()` method of `DriveStraight.java`, schedule
+an `arcadeDrive` command with a timeout of 4 seconds.
+Then, do the following:
+
+1. Rename the class defined in `DriveStraight.java` to `DriveStraight`.
+2. In the `start()` method, schedule an `arcadeDrive` command with a timeout of 4 seconds.
+   This `arcadeDrive` command should have a constant forward throttle of `0.5`
+   and a constant rotational throttle of `0`.
+
+<details class="accordion">
+    <summary>Hint 1</summary>
+    To schedule a command without a trigger, use `Scheduler.getDefault().schedule(Command)`:
+    ```java #startMethod
+    
+    ```
+    Can you figure out what `myAutoCommand` should be? 
+</details>
+<details class="accordion">
+    <summary>Hint 2</summary>
+    A `DoubleSupplier` with syntax `() -> 0.5` will always return 
+    0.5 when its `getAsDouble()` method is called. <br /> <br />
+    Use this information to complete the following `Command` by
+    replacing `forwardThrottle` and `rotationalThrottle` with `DoubleSupplier`s:
+    ```java #4SecDriveCommand
+    
+    ```
+
+</details>
+
+### Task 6: Drive Back then Shoot Autonomous
+
+Driving back and shooting is a common auto found in the 2026 game, REBUILT.
+At the start
+of auto, the drive team would line up the kitbot to the wall of the scoring location.
+The kitbot would then drive backwards, and finally shoot the preloaded balls.
+
+Create a `Command`-returning method named `autoCommand()`, with the following requirements:
+
+1. The command returned from that method should have no requirements.
+2. First, it should drive backwards with the `robot.drivetrain.arcadeDrive()` command, at a throttle of `-0.2`, for 2 seconds.
+3. Then, it should run the `robot.shooter.shoot()` and `robot.feeder.feed()` commands simultaneously.
+
+Then, in the `start()` method of the OpMode, schedule the `autoCommand()` we just created.
+
+<details class="accordion">
+    <summary>Hint 1</summary>
+    ```java #autoCmdDef
+    ```
+</details>
+<details class="accordion">
+    <summary>Hint 2</summary>
+    What should you put in the curly brackets? <br />
+    `Command.noRequirements(coroutine -> {}).named("Drive Back Then Shoot")`
+</details>
+<details class="accordion">
+    <summary>Hint 3</summary>
+    `coroutine.await(Command)` runs a command from start to finish inside of another.
+</details>
+<details class="accordion">
+    <summary>Hint 4</summary>
+    Look at the `DriveStraight.java` class. There, you wrote a command to drive forward,
+    at a throttle of 0.5, for 4 seconds. Try copy-pasting that command into a
+    `coroutine.await()` call, while changing some parameters.
+</details>
+<details class="accordion">
+    <summary>Hint 5</summary>
+    To run 2 commands simultaneously, call `coroutine.awaitAll(command1, command2)` inside
+    of another command.
+</details>
+
+# Running everything in sim
+
+Just like in stage 1A, you can press `W` to drive forward, `S` to drive backward,
+`A` and `D` to rotate, `E` to intake and `R` to outtake.
+
+Shooting is still mapped to the `Q` button; however, you now have to hold the button down
+for >2 seconds before a shooting animation appears.
+Commands v3 has made it easier
+for us to program a "spinup" sequence, where the launcher can get up to speed for 2 secs
+before balls are serialized through it.
+
+<Aside type="note">
+    For instructions on how to setup sim, see
+    [here](/learning-course/stage1/stage1a/drivetrain-sim/#simulating-code) and
+    [here](/learning-course/stage1/stage1a/kitbot-additional-motors/#3d-sim).
+</Aside>
+
+# Solutions
+
+The solutions to this stage can be found below:
+[CTRE](https://github.com/frcsoftware/Stage1B-Solution-CTRE)
+[REV](https://github.com/frcsoftware/Stage1B-Solution-REV)
