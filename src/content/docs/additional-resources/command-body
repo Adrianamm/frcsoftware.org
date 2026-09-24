@@ -1,0 +1,45 @@
+---
+title: The Body of a Command
+description: How the behavior of commands are written
+codeRegionSources:
+    default: stage1/stage1b/snippets/src/main/java/sources/CommandBody.java
+---
+
+import Aside from '@components/Aside.astro';
+
+### Something Looks Familiar Here...
+
+If you've ever coded in Scratch, with blocks, or taken an intro to programming class,
+you've probably written software as a sequence of statements.
+Like so:
+
+```java #triangleLoop
+
+```
+
+(In case you were curious - this prints a triangle to the console.)
+
+From the previous section, you might remember that command-based programming,
+as a whole, cannot be represented with just a sequence of statements.
+However, individual commands (or robot actions) can.
+
+For instance, this command body runs a motor at full speed forever:
+
+```java #fullThrottleCmdBody
+
+```
+
+And this command body would rotate your robot by roughly 90 degrees, then stop:
+
+```java #rotate90CommandBody
+
+```
+
+Fundamentally, the commands (or robot actions) themselves can be represented with familiar
+programming structures: while loops, variables, method calls, and more.
+
+<Aside type="note">
+    Notice that we said command body, not command! The command body defines the
+    actions it executes after it is run. However, a command must also define
+    requirements, priority, and more.
+</Aside>
