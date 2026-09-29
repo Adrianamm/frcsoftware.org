@@ -23,15 +23,16 @@ import ContentRowCaption from '@components/ContentRow.astro';
 />
 
 The kitbot uses a four motor tank drive.
-A tank drive is a type of drivetrain where left and right sides are driven independently by two motors each.
-This allows the robot to move similar to a tank by driving the left and right sides at different speeds.
+A tank drive is a type of drive train where left and right sides are driven independently by motors on each side.
+This allows the robot to drive similar to a tank by driving forward, backwards, turn left, and right sides at different speeds.
+Similar to a tank, it cant move sideways.
 For this stage, the four drivetrain motors will be referred to as `leftLeader`, `leftFollower`, `rightLeader`, `rightFollower`.
 
 # Systemcore
 
 Systemcore is the main processor for robot code.
 It can be thought of as the "brain" of the robot.
-Motor controllers connect to the Systemcore through the CAN ports.
+Motor controllers connect to the Systemcore through the CAN ports and the Smart IO allows for PWM control.
 
 <ContentFigure
     width="300px"
@@ -153,14 +154,10 @@ Now try creating the right motor controllers on your own.
 
 Motor controllers have many settings that can be changed such as IDs, motor
 types, and limits.
-Vendors provide
-software, such as REV's [REV Hardware Client 2](https://docs.revrobotics.com/rev-hardware-client-2) and CTRE's [Phoenix Tuner X](https://v6.docs.ctr-electronics.com/en/stable/docs/tuner/index.html), to run
-and configure their devices from a computer.
-However, it is recommended to
-configure devices through code to ensure that all motor controllers are properly
-configured.
-This is especially useful because it can be easy to forget all of
-the configurations that need to be added and their proper values.
+Vendors provide software, such as REV's [REV Hardware Client 2](https://docs.revrobotics.com/rev-hardware-client-2)
+and CTRE's [Phoenix Tuner X](https://v6.docs.ctr-electronics.com/en/stable/docs/tuner/index.html), to run and configure their devices from a computer.
+However, it is recommended to configure devices through code to ensure that all motor controllers are properly configured.
+This is especially useful because it can be easy to forget all of the configurations that need to be added and their proper values.
 
 <Aside type="note">
     Motor controllers should usually only configured once and should never be
@@ -282,7 +279,7 @@ While there are several ways to control a tank drive, this stage will be using a
 Arcade drive uses the y-axis of a joystick to control how fast the robot drives forward or backward while the x-axis controls how fast the robot rotates clockwise or counter clockwise.
 WPILib provides a class to convert joystick inputs into commands for the motors to follow called `DifferentialDrive`.
 
-An instance of `DifferentialDrive` should be created under where the motor controllers were first declared.
+An instance of `DifferentialDrive` should be created under where the motor controllers were first constructed.
 
 <Tabs syncKey={REV_CTRE_CHOOSER_KEY}>
     <TabItem label="CTRE">
@@ -380,7 +377,7 @@ By extending `PeriodicOpMode` these classes gain a few useful functions that are
 - `end()` is called once when the robot transitions from enabled to disabled.
 - `disabledPeriodic()` is called repeatedly when the robot is disabled.
 
-Further information about OpModes can be found in [this blog post](https://zharel.me/blog/opmodes/) if you would like to learn more.
+Further information about OpModes can be found in [the WPILib Documentation](https://docs.wpilib.org/en/latest/docs/software/basic-programming/opmodes.html) if you would like to learn more.
 
 Two blank `PeriodicOpMode`s, `MyTeleop.java` and `MyAuto.java` are provided under the `opmode` folder.
 

@@ -14,7 +14,7 @@ import { REV_CTRE_CHOOSER_KEY } from '@data/tabsSyncKeys.ts';
 It's common to write code without having immediate access to a physical robot to test changes.
 Luckily, your computer can also run robot code allowing it to be tested without a robot.
 While there are some things that can be tested by simulating pure robot code, there are no physical motors to move and respond with new positions.
-Instead, we use simulation classes that use physics to take the desired input voltage to the motors and model how the physical mechanism would respond.
+Therefore, we use simulation classes that use physics to take the desired input voltage to the motors and model how the physical motors would respond.
 For this stage custom classes have been provided that abstract away much of this logic.
 You can find these files under the `simulation` folder if you would like to read the implementation.
 You can also read the [WPILib docs on simulation](https://docs.wpilib.org/en/stable/docs/software/wpilib-tools/robot-simulation/index.html) if you would like to learn more about simulation.
