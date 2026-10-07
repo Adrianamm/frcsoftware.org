@@ -27,7 +27,7 @@ void main() {
     // After the code runs, change `pointOne`'s x-coordinate to -4, and
     // `pointTwo`'s x-coordinate to -5; the code should now print
     // "Point one is farther right!"
- 
+
 
     // Using the same getter functions, use conditional statements
     // to handle the following six cases:
