@@ -51,8 +51,17 @@ CAN ID is an integer that each CAN device is configured to have.
 All devices on a given CAN Bus must have a unique ID.
 Using the combination of CAN Bus and CAN ID Systemcore can give commands to the correct motor controller.
 
-CTRE uses a `CANBus` that is constructed with a `CANPort` enum to specify which of Systemcore's CANBuses the device is connected to.
-REV uses a `CANPort` enum to specify which of Systemcore's CANBuses the device is connected to.
+<Tabs syncKey={REV_CTRE_CHOOSER_KEY}>
+    <TabItem label = "CTRE">
+        CTRE uses a `CANBus` that is constructed with a `CANPort` enum to specify which of Systemcore's CANBuses the device is connected to.
+
+    </TabItem>
+    <TabItem label = "REV">
+        REV uses a `CANPort` enum to specify which of Systemcore's CANBuses the device is connected to.
+
+ </TabItem>
+
+</Tabs>
 Only `CAN_S0` through `CAN_S4` will ever be used since Systemcore only has five CAN Busses.
 
 For this exercise the motor controllers will have the IDs:
@@ -154,7 +163,7 @@ This object stores the configuration so it can be changed and shared across diff
 </Tabs>
 
 Next, settings can be changed from their default by calling various functions on the configuration object with their new values.
-For the left motors, the invert setting will be `true` for REV code and `InvertedValue.CounterClockwise_Positive` for CTRE code.
+For the left motors, the invert setting will be `true` for REV code and `InvertedValue.Clockwise_Positive` for CTRE code.
 This will cause the motors to spin in a direction that would drive the robot forward when a positive input is given.
 Since the motors on the right side of the drivetrain are facing the opposite direction they would cause the wheels try and drive the robot backwards when given a positive input if they were configured the same way.
 Instead they should be configured with an invert setting of `false` or `InvertedValue.CounterClockwise_Positive` so they also drive the robot forward when given a positive input.
