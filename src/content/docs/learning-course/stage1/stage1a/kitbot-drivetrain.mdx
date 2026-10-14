@@ -50,14 +50,15 @@ CAN Bus refers to which of the 5 Systemcore CAN ports, or which CANivore, the de
 CAN ID is an integer that each CAN device is configured to have.
 All devices on a given CAN Bus must have a unique ID.
 Using the combination of CAN Bus and CAN ID Systemcore can give commands to the correct motor controller.
+WPILib has a CANPort enum.
 
 <Tabs syncKey={REV_CTRE_CHOOSER_KEY}>
     <TabItem label = "CTRE">
-        CTRE uses a `CANBus` that is constructed with a `CANPort` enum to specify which of Systemcore's CANBuses the device is connected to.
+        CTRE uses a `CANBus` object that is constructed using a `CANPort` value to specify which of Systemcore's CANBuses the device is connected to.
 
     </TabItem>
     <TabItem label = "REV">
-        REV uses a `CANPort` enum to specify which of Systemcore's CANBuses the device is connected to.
+        REV uses `CANPort` to specify which of Systemcore's CANBuses the device is connected to.
 
  </TabItem>
 
