@@ -66,7 +66,6 @@ public class Robot extends OpModeRobot {
   // [/IntakeLauncherSim]
   // [FeederSim]
   private final SingleFlywheelSim feederSim = SingleFlywheelSim.forFeeder(feeder);
-
   // [/FeederSim]
 
   // [RobotWithSimPart2]
@@ -102,16 +101,16 @@ public class Robot extends OpModeRobot {
         PersistMode.kPersistParameters);
     // [/MotorConfig]
   }
-
   // [/AllConfigs]
 
   // [DriveSimPeriodic]
   @Override
   public void simulationPeriodic() {
     drivetrainSim.periodic();
-    // [/RobotWithSimPart2]
+  // [/DriveSimPeriodic]
 
-    // [/DriveSimPeriodic]
+  // [/RobotWithSimPart2]
+
     // [MotorSimPeriodic]
     intakeLauncherSim.periodic();
     feederSim.periodic();
