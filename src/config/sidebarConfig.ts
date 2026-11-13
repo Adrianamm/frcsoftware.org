@@ -217,6 +217,10 @@ const learningCourse: SidebarTopic = {
                             label: 'Stage 1C Introduction',
                             slug: 'learning-course/stage1/stage1c/stage-overview',
                         },
+                        {
+                            label: 'Exercise - Adding PID to Kibot',
+                            slug: 'learning-course/stage1/stage1c/pid-kitbot-pt1',
+                        },
                     ],
                 },
             ],
